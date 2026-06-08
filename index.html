@@ -1144,30 +1144,19 @@ async function submitGate() {
   // Build scores JSON
   const scoresJson = buildScores();
 
-  // ── POST lead data ──────────────────────────────────────────
-  // TODO: Replace the URL below with your Supabase or Mailchimp endpoint.
-  // Example Supabase:
-  //   const SUPABASE_URL = 'https://xxxx.supabase.co';
-  //   const SUPABASE_KEY = 'your-anon-key';
-  //   await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'apikey': SUPABASE_KEY,
-  //       'Authorization': `Bearer ${SUPABASE_KEY}`
-  //     },
-  //     body: JSON.stringify({
-  //       first, last, email, dept,
-  //       iso_class: isoClass,
-  //       submitted_at: new Date().toISOString(),
-  //       scores_json: JSON.stringify(scoresJson)
-  //     })
-  //   });
-  //
-  // For now, log to console and proceed:
-  console.log('[FFD ISO Assessment] Lead captured:', { first, last, email, dept, isoClass, scoresJson });
+  // ── POST lead data to Mailchimp via Vercel serverless function ──
+  try {
+    await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ first, last, email, dept, isoClass })
+    });
+  } catch (err) {
+    // Non-blocking — proceed to results even if network fails
+    console.warn('[FFD ISO Assessment] Subscribe error:', err);
+  }
 
-  // Simulate brief async delay
+  // Brief delay for UX
   await new Promise(r => setTimeout(r, 600));
 
   renderResults(scoresJson);
