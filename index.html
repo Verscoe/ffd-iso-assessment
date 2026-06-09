@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free ISO Readiness Assessment | Freedom From Dissonance</title>
   <style>
-    /* ─── Design Tokens ─────────────────────────────────────────── */
+    /* âââ Design Tokens âââââââââââââââââââââââââââââââââââââââââââ */
     :root {
       --blue:    #0067FF;
       --navy:    #0F172A;
@@ -15,12 +15,11 @@
       --white:   #FFFFFF;
       --border:  #D1D9E6;
       --success: #16A34A;
-
       --radius:  10px;
       --shadow:  0 4px 24px rgba(0,0,0,.10);
     }
 
-    /* ─── Reset / Base ──────────────────────────────────────────── */
+    /* âââ Reset / Base ââââââââââââââââââââââââââââââââââââââââââââ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -31,7 +30,7 @@
       line-height: 1.6;
     }
 
-    /* ─── Header ────────────────────────────────────────────────── */
+    /* âââ Header ââââââââââââââââââââââââââââââââââââââââââââââââââ */
     .header {
       background: var(--navy);
       padding: 16px 24px;
@@ -55,10 +54,10 @@
       font-size: 12px;
     }
 
-    /* ─── Progress Bar ──────────────────────────────────────────── */
+    /* âââ Progress Bar ââââââââââââââââââââââââââââââââââââââââââââ */
     .progress-wrap {
       background: var(--navy);
-      padding: 0 24px 16px;
+      padding: 0 24px 14px;
     }
     .progress-meta {
       display: flex;
@@ -70,7 +69,7 @@
     .progress-track {
       background: rgba(255,255,255,.15);
       border-radius: 99px;
-      height: 6px;
+      height: 5px;
       overflow: hidden;
     }
     .progress-fill {
@@ -80,29 +79,26 @@
       transition: width .4s ease;
     }
 
-    /* ─── Layout ────────────────────────────────────────────────── */
+    /* âââ Layout ââââââââââââââââââââââââââââââââââââââââââââââââââ */
     .screen { display: none; }
     .screen.active { display: block; }
-
     .container {
       max-width: 680px;
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 32px 20px 80px;
     }
 
-    /* ─── Cards ─────────────────────────────────────────────────── */
+    /* âââ Cards âââââââââââââââââââââââââââââââââââââââââââââââââââ */
     .card {
       background: var(--white);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 28px 28px;
-      margin-bottom: 20px;
+      padding: 24px 24px;
+      margin-bottom: 14px;
     }
-    @media (max-width: 480px) {
-      .card { padding: 20px 18px; }
-    }
+    @media (max-width: 480px) { .card { padding: 18px 16px; } }
 
-    /* ─── Typography ─────────────────────────────────────────────── */
+    /* âââ Typography âââââââââââââââââââââââââââââââââââââââââââââââ */
     .eyebrow {
       font-size: 11px;
       font-weight: 700;
@@ -134,32 +130,23 @@
     p { font-size: 15px; color: var(--body); }
     .muted { color: #6B7A8D; font-size: 13px; }
 
-    /* ─── Category Badge ─────────────────────────────────────────── */
+    /* âââ Category Badge âââââââââââââââââââââââââââââââââââââââââââ */
     .cat-badge {
       display: inline-block;
-      background: var(--navy);
-      color: var(--white);
+      background: var(--bg);
+      color: var(--body);
+      border: 1px solid var(--border);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: .8px;
+      letter-spacing: .6px;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 4px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    /* ─── Question Block ─────────────────────────────────────────── */
-    .question-block {
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-    }
-    .question-block:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-    .q-number {
+    /* âââ Question Number âââââââââââââââââââââââââââââââââââââââââââ */
+    .q-num {
       font-size: 11px;
       font-weight: 700;
       color: var(--blue);
@@ -168,14 +155,14 @@
       margin-bottom: 6px;
     }
 
-    /* ─── Radio Options ──────────────────────────────────────────── */
+    /* âââ Radio Options ââââââââââââââââââââââââââââââââââââââââââââ */
     .options { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 
     .option-label {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      padding: 12px 14px;
+      padding: 11px 14px;
       border: 2px solid var(--border);
       border-radius: 8px;
       cursor: pointer;
@@ -193,7 +180,7 @@
       border-radius: 50%;
       background: var(--white);
       transition: all .15s;
-      margin-top: 1px;
+      margin-top: 2px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -207,16 +194,11 @@
       opacity: 0;
       transition: opacity .15s;
     }
-    .option-label.selected {
-      border-color: var(--blue);
-      background: #EBF4FF;
-    }
-    .option-label.selected .option-dot {
-      border-color: var(--blue);
-    }
+    .option-label.selected { border-color: var(--blue); background: #EBF4FF; }
+    .option-label.selected .option-dot { border-color: var(--blue); }
     .option-label.selected .option-dot::after { opacity: 1; }
 
-    /* ─── Buttons ────────────────────────────────────────────────── */
+    /* âââ Buttons ââââââââââââââââââââââââââââââââââââââââââââââââââ */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -232,35 +214,16 @@
       text-decoration: none;
     }
     .btn:active { transform: scale(.98); }
-    .btn-primary {
-      background: var(--blue);
-      color: var(--white);
-    }
+    .btn-primary { background: var(--blue); color: var(--white); }
     .btn-primary:hover { opacity: .9; }
-    .btn-red {
-      background: var(--red);
-      color: var(--white);
-    }
+    .btn-red { background: var(--red); color: var(--white); }
     .btn-red:hover { opacity: .9; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--navy);
-      border: 2px solid var(--border);
-    }
+    .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--border); }
     .btn-ghost:hover { border-color: var(--navy); }
     .btn-full { width: 100%; }
-    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
 
-    .nav-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .nav-row .btn { flex: 1; min-width: 120px; }
-
-    /* ─── Intro Screen ───────────────────────────────────────────── */
+    /* âââ Intro Screen âââââââââââââââââââââââââââââââââââââââââââââ */
     .intro-hero {
       background: var(--navy);
       border-radius: var(--radius);
@@ -273,19 +236,19 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
       margin-bottom: 20px;
     }
     .feature-item {
       background: var(--white);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 14px;
       text-align: center;
     }
-    .feature-icon { font-size: 26px; margin-bottom: 6px; }
+    .feature-icon { font-size: 24px; margin-bottom: 5px; }
     .feature-label { font-size: 13px; font-weight: 600; color: var(--navy); }
-    .feature-sub { font-size: 12px; color: #6B7A8D; margin-top: 3px; }
+    .feature-sub { font-size: 12px; color: #6B7A8D; margin-top: 2px; }
 
     .category-list {
       display: grid;
@@ -305,31 +268,52 @@
       align-items: center;
       gap: 8px;
     }
-    .cat-weight {
-      margin-left: auto;
-      font-size: 11px;
-      color: var(--blue);
-      font-weight: 700;
-    }
+    .cat-weight { margin-left: auto; font-size: 11px; color: var(--blue); font-weight: 700; }
 
-    /* ─── Gate Screen ────────────────────────────────────────────── */
+    /* âââ Gate Card ââââââââââââââââââââââââââââââââââââââââââââââââ */
+    .gate-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .gate-card.gate-ready {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(0,103,255,.10), var(--shadow);
+    }
     .gate-header {
       background: linear-gradient(135deg, var(--navy) 0%, #1A2F55 100%);
-      border-radius: var(--radius) var(--radius) 0 0;
-      padding: 28px 28px 20px;
-      margin: -28px -28px 24px;
+      padding: 24px 24px 18px;
       text-align: center;
     }
-    .gate-header h2 { color: var(--white); font-size: 20px; margin-bottom: 6px; }
-    .gate-header p { color: rgba(255,255,255,.7); font-size: 14px; }
+    .gate-header .lock-icon { font-size: 28px; margin-bottom: 8px; }
+    .gate-header h2 { color: var(--white); font-size: 18px; margin-bottom: 6px; }
+    .gate-header p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.5; }
 
-    .form-group { margin-bottom: 16px; }
+    .gate-body { padding: 24px; }
+
+    .gate-unlocked {
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #F0FDF4;
+      border-top: 1px solid #BBF7D0;
+    }
+    .gate-unlocked-icon { font-size: 22px; }
+    .gate-unlocked-text { font-size: 14px; font-weight: 600; color: var(--success); }
+
+    /* âââ Form âââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    .form-group { margin-bottom: 14px; }
     .form-group label {
       display: block;
       font-size: 13px;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .form-group input,
     .form-group select {
@@ -344,10 +328,7 @@
       font-family: inherit;
     }
     .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: var(--blue);
-    }
+    .form-group select:focus { outline: none; border-color: var(--blue); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     @media (max-width: 400px) { .form-row { grid-template-columns: 1fr; } }
 
@@ -355,10 +336,82 @@
       font-size: 12px;
       color: #6B7A8D;
       text-align: center;
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
-    /* ─── Results Screen ─────────────────────────────────────────── */
+    /* âââ Alert ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    .alert {
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 14px;
+      display: none;
+    }
+    .alert-error { background: #FEE2E2; color: #B91C1C; border: 1px solid #FECACA; }
+    .alert.visible { display: block; }
+
+    /* âââ Locked Section âââââââââââââââââââââââââââââââââââââââââââ */
+    .locked-section-wrap { position: relative; margin-bottom: 14px; }
+
+    .locked-section {
+      transition: filter .5s ease, opacity .5s ease;
+    }
+    .locked-section.locked {
+      filter: blur(4px);
+      pointer-events: none;
+      user-select: none;
+      opacity: 0.45;
+    }
+
+    .locked-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+    .locked-overlay.hidden { opacity: 0; }
+    .lock-badge {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      box-shadow: 0 4px 20px rgba(0,0,0,.14);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* âââ Submit Row âââââââââââââââââââââââââââââââââââââââââââââââ */
+    .submit-row {
+      text-align: center;
+      padding-top: 8px;
+    }
+    .submit-hint {
+      font-size: 13px;
+      color: #6B7A8D;
+      margin-top: 10px;
+    }
+
+    /* âââ Spinner ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: var(--white);
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* âââ Results Screen âââââââââââââââââââââââââââââââââââââââââââ */
     .results-hero {
       background: var(--navy);
       border-radius: var(--radius);
@@ -384,14 +437,8 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 12px;
-      position: relative;
     }
-    .score-number {
-      font-size: 42px;
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1;
-    }
+    .score-number { font-size: 42px; font-weight: 800; color: var(--white); line-height: 1; }
     .score-pct { font-size: 20px; font-weight: 400; }
     .score-label { font-size: 13px; color: rgba(255,255,255,.6); }
     .iso-class-badge {
@@ -403,7 +450,6 @@
       margin-top: 4px;
     }
 
-    /* Category breakdown */
     .breakdown-item {
       display: flex;
       align-items: center;
@@ -412,35 +458,12 @@
       border-bottom: 1px solid var(--border);
     }
     .breakdown-item:last-child { border-bottom: none; }
-    .breakdown-name {
-      flex: 1;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--navy);
-    }
+    .breakdown-name { flex: 1; font-size: 14px; font-weight: 600; color: var(--navy); }
     .breakdown-sub { font-size: 12px; color: #6B7A8D; font-weight: 400; }
-    .breakdown-bar-wrap {
-      flex: 1.5;
-      background: var(--bg);
-      border-radius: 99px;
-      height: 8px;
-      overflow: hidden;
-    }
-    .breakdown-bar {
-      height: 100%;
-      border-radius: 99px;
-      background: var(--blue);
-      transition: width 1s ease .3s;
-    }
-    .breakdown-score {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--navy);
-      min-width: 36px;
-      text-align: right;
-    }
+    .breakdown-bar-wrap { flex: 1.5; background: var(--bg); border-radius: 99px; height: 8px; overflow: hidden; }
+    .breakdown-bar { height: 100%; border-radius: 99px; background: var(--blue); transition: width 1s ease .3s; }
+    .breakdown-score { font-size: 14px; font-weight: 700; color: var(--navy); min-width: 36px; text-align: right; }
 
-    /* Improvement recs */
     .rec-item {
       display: flex;
       gap: 14px;
@@ -450,31 +473,22 @@
     }
     .rec-item:last-child { border-bottom: none; }
     .rec-num {
-      width: 26px;
-      height: 26px;
-      min-width: 26px;
+      width: 26px; height: 26px; min-width: 26px;
       border-radius: 50%;
       background: var(--navy);
       color: var(--white);
-      font-size: 13px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
       margin-top: 1px;
     }
     .rec-text { font-size: 14px; line-height: 1.55; }
     .rec-cat {
       display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 3px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .5px; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 3px;
     }
 
-    /* CTA Card */
     .cta-card {
       background: var(--red);
       border-radius: var(--radius);
@@ -484,49 +498,22 @@
     }
     .cta-card h2 { color: var(--white); margin-bottom: 10px; }
     .cta-card p { color: rgba(255,255,255,.85); margin-bottom: 20px; font-size: 15px; }
-    .btn-white {
-      background: var(--white);
-      color: var(--red);
-      font-weight: 700;
-    }
+    .btn-white { background: var(--white); color: var(--red); font-weight: 700; }
     .btn-white:hover { opacity: .9; }
-
-    /* Alert */
-    .alert {
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 14px;
-      margin-bottom: 16px;
-      display: none;
-    }
-    .alert-error { background: #FEE2E2; color: #B91C1C; border: 1px solid #FECACA; }
-    .alert.visible { display: block; }
-
-    /* Spinner */
-    .spinner {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(255,255,255,.4);
-      border-top-color: var(--white);
-      border-radius: 50%;
-      animation: spin .6s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
 
-<!-- ═══ HEADER ══════════════════════════════════════════════════ -->
+<!-- âââ HEADER ââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <header class="header">
   <div class="header-brand">Freedom From <span>Dissonance</span></div>
   <div class="header-label">ISO Readiness Assessment</div>
 </header>
 
-<!-- ═══ PROGRESS ════════════════════════════════════════════════ -->
+<!-- âââ PROGRESS ââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <div class="progress-wrap" id="progressWrap" style="display:none">
   <div class="progress-meta">
-    <span id="progressLabel">Category 1 of 6</span>
+    <span id="progressLabel">0 of 12 questions answered</span>
     <span id="progressPct">0%</span>
   </div>
   <div class="progress-track">
@@ -534,38 +521,39 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCREEN 0 — INTRO
-════════════════════════════════════════════════════════════════ -->
+
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SCREEN 0 â INTRO
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <div class="screen active" id="screen-intro">
   <div class="container">
     <div class="intro-hero">
       <div class="eyebrow" style="color:rgba(255,255,255,.5)">Free Assessment</div>
       <h1>How ISO-Ready Is Your Fire Department?</h1>
-      <p>24 questions. 5 minutes. Get an honest look at where your department stands on the criteria that determine your ISO Public Protection Classification — and where to focus first.</p>
+      <p>12 questions. About 3 minutes. Get an honest look at where your department stands on the criteria that determine your ISO Public Protection Classification â and where to focus first.</p>
       <button class="btn btn-red" onclick="startAssessment()" style="font-size:16px; padding:16px 32px;">
-        Start Free Assessment →
+        Start Free Assessment â
       </button>
     </div>
 
     <div class="feature-grid">
       <div class="feature-item">
-        <div class="feature-icon">📋</div>
-        <div class="feature-label">24 Questions</div>
-        <div class="feature-sub">6 weighted categories</div>
+        <div class="feature-icon">ð</div>
+        <div class="feature-label">12 Questions</div>
+        <div class="feature-sub">6 FSRS categories</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">⏱️</div>
-        <div class="feature-label">5 Minutes</div>
+        <div class="feature-icon">â±ï¸</div>
+        <div class="feature-label">~3 Minutes</div>
         <div class="feature-sub">No login required</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon">ð</div>
         <div class="feature-label">Your Score</div>
         <div class="feature-sub">+ estimated ISO class</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🎯</div>
+        <div class="feature-icon">ð¯</div>
         <div class="feature-label">Top Priorities</div>
         <div class="feature-sub">Specific next steps</div>
       </div>
@@ -573,105 +561,131 @@
 
     <div class="card">
       <h3 style="margin-bottom:12px">What this assessment covers</h3>
-      <p class="muted" style="margin-bottom:14px">Based on FSRS (Fire Suppression Rating Schedule) criteria — the same framework ISO uses to assign your Public Protection Classification.</p>
+      <p class="muted" style="margin-bottom:14px">Based on FSRS (Fire Suppression Rating Schedule) criteria â the same framework ISO uses to assign your Public Protection Classification.</p>
       <div class="category-list">
-        <div class="cat-pill">🔊 Communications <span class="cat-weight">10%</span></div>
-        <div class="cat-pill">🚒 Apparatus &amp; Equipment <span class="cat-weight">15%</span></div>
-        <div class="cat-pill">👥 Personnel &amp; Staffing <span class="cat-weight">15%</span></div>
-        <div class="cat-pill">📚 Training &amp; Records <span class="cat-weight">10%</span></div>
-        <div class="cat-pill">💧 Water Supply <span class="cat-weight">35%</span></div>
-        <div class="cat-pill">🏗️ Pre-Incident Planning <span class="cat-weight">15%</span></div>
+        <div class="cat-pill">ð Communications <span class="cat-weight">10%</span></div>
+        <div class="cat-pill">ð Apparatus &amp; Equipment <span class="cat-weight">15%</span></div>
+        <div class="cat-pill">ð¥ Personnel &amp; Staffing <span class="cat-weight">15%</span></div>
+        <div class="cat-pill">ð Training &amp; Records <span class="cat-weight">10%</span></div>
+        <div class="cat-pill">ð§ Water Supply <span class="cat-weight">35%</span></div>
+        <div class="cat-pill">ðï¸ Pre-Incident Planning <span class="cat-weight">15%</span></div>
       </div>
-      <p class="muted" style="margin-top:8px">Your full results — score, category breakdown, and top improvement recommendations — are unlocked after completing all 24 questions.</p>
+      <p class="muted" style="margin-top:8px">Answer the first 6 questions to see how your department compares â then unlock your full results with a quick email.</p>
     </div>
 
     <div style="text-align:center">
       <button class="btn btn-red btn-full" onclick="startAssessment()" style="font-size:16px; padding:16px;">
-        Start Free Assessment →
+        Start Free Assessment â
       </button>
-      <p class="muted" style="margin-top:10px">No account needed. Takes about 5 minutes.</p>
+      <p class="muted" style="margin-top:10px">No account needed. Takes about 3 minutes.</p>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCREENS 1–6 — QUESTIONS (generated by JS)
-════════════════════════════════════════════════════════════════ -->
-<div class="screen" id="screen-questions">
-  <div class="container" id="questionContainer"></div>
-</div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCREEN 7 — EMAIL GATE
-════════════════════════════════════════════════════════════════ -->
-<div class="screen" id="screen-gate">
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SCREEN 1 â ASSESSMENT
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<div class="screen" id="screen-assessment">
   <div class="container">
-    <div class="card">
+
+    <!-- Questions 1â6 (free) -->
+    <div id="freeQuestions"></div>
+
+    <!-- ââ GATE âââââââââââââââââââââââââââââââââââââââââââââââ -->
+    <div class="gate-card" id="gateCard">
       <div class="gate-header">
-        <div style="font-size:32px; margin-bottom:10px">🎉</div>
-        <h2>You finished the assessment!</h2>
-        <p>Enter your info below to unlock your full ISO Readiness Report — score, category breakdown, and prioritized recommendations.</p>
+        <div class="lock-icon">ð</div>
+        <h2>Unlock your full results</h2>
+        <p>You're halfway through. Enter your info to unlock the remaining 6 questions and receive your personalized ISO Readiness Report â score, category breakdown, and top recommendations.</p>
       </div>
 
-      <div id="gateAlert" class="alert alert-error">Please fill in all required fields.</div>
+      <div class="gate-body" id="gateBody">
+        <div id="gateAlert" class="alert alert-error">Please fill in all required fields.</div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="gFirst">First Name *</label>
-          <input type="text" id="gFirst" placeholder="Jesse" autocomplete="given-name" />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="gFirst">First Name *</label>
+            <input type="text" id="gFirst" placeholder="Jesse" autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label for="gLast">Last Name *</label>
+            <input type="text" id="gLast" placeholder="Smith" autocomplete="family-name" />
+          </div>
         </div>
         <div class="form-group">
-          <label for="gLast">Last Name *</label>
-          <input type="text" id="gLast" placeholder="Smith" autocomplete="family-name" />
+          <label for="gEmail">Work Email Address *</label>
+          <input type="email" id="gEmail" placeholder="chief@yourdept.org" autocomplete="email" />
         </div>
-      </div>
-      <div class="form-group">
-        <label for="gEmail">Work Email Address *</label>
-        <input type="email" id="gEmail" placeholder="chief@yourdept.org" autocomplete="email" />
-      </div>
-      <div class="form-group">
-        <label for="gDept">Fire Department Name *</label>
-        <input type="text" id="gDept" placeholder="Anytown Fire Department" />
-      </div>
-      <div class="form-group">
-        <label for="gClass">Current ISO Class (if known)</label>
-        <select id="gClass">
-          <option value="">— Select your current class —</option>
-          <option value="1">Class 1 (Best)</option>
-          <option value="2">Class 2</option>
-          <option value="3">Class 3</option>
-          <option value="4">Class 4</option>
-          <option value="5">Class 5</option>
-          <option value="6">Class 6</option>
-          <option value="7">Class 7</option>
-          <option value="8">Class 8</option>
-          <option value="8B">Class 8B</option>
-          <option value="9">Class 9</option>
-          <option value="10">Class 10 (No recognized protection)</option>
-          <option value="unknown">I don't know</option>
-        </select>
+        <div class="form-group">
+          <label for="gDept">Fire Department Name *</label>
+          <input type="text" id="gDept" placeholder="Anytown Fire Department" />
+        </div>
+        <div class="form-group">
+          <label for="gClass">Current ISO Class (if known)</label>
+          <select id="gClass">
+            <option value="">â Select your current class â</option>
+            <option value="1">Class 1 (Best)</option>
+            <option value="2">Class 2</option>
+            <option value="3">Class 3</option>
+            <option value="4">Class 4</option>
+            <option value="5">Class 5</option>
+            <option value="6">Class 6</option>
+            <option value="7">Class 7</option>
+            <option value="8">Class 8</option>
+            <option value="8B">Class 8B</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10 (No recognized protection)</option>
+            <option value="unknown">I don't know</option>
+          </select>
+        </div>
+
+        <button class="btn btn-red btn-full" id="gateSubmitBtn" onclick="submitGate()" style="font-size:15px; padding:14px;">
+          Unlock Remaining Questions â
+        </button>
+        <p class="privacy-note">ð No spam. Your info stays private.</p>
       </div>
 
-      <button class="btn btn-red btn-full" id="gateSubmitBtn" onclick="submitGate()" style="font-size:16px; padding:16px; margin-top:8px;">
-        Unlock My Results →
-      </button>
-      <p class="privacy-note">🔒 Your info is private. We don't sell data or spam. You'll receive your report by email.</p>
+      <!-- Shown after unlock -->
+      <div class="gate-unlocked" id="gateUnlocked" style="display:none">
+        <div class="gate-unlocked-icon">â</div>
+        <div class="gate-unlocked-text">Assessment unlocked â continue below to finish.</div>
+      </div>
     </div>
+
+    <!-- ââ LOCKED SECTION (Q7âQ12) âââââââââââââââââââââââââââââ -->
+    <div class="locked-section-wrap">
+      <div class="locked-section locked" id="lockedSection">
+        <div id="lockedQuestions"></div>
+      </div>
+      <div class="locked-overlay" id="lockedOverlay">
+        <div class="lock-badge">ð Complete the form above to unlock</div>
+      </div>
+    </div>
+
+    <!-- ââ SUBMIT âââââââââââââââââââââââââââââââââââââââââââââââ -->
+    <div class="submit-row" id="submitRow" style="display:none">
+      <button class="btn btn-primary btn-full" id="submitBtn" onclick="showResults()" style="font-size:16px; padding:16px;" disabled>
+        Get My Results â
+      </button>
+      <p class="submit-hint" id="submitHint">Answer all 12 questions to see your results.</p>
+    </div>
+
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     SCREEN 8 — RESULTS
-════════════════════════════════════════════════════════════════ -->
+
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+     SCREEN 2 â RESULTS
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <div class="screen" id="screen-results">
   <div class="container">
 
-    <!-- Score Hero -->
     <div class="results-hero">
       <h2 id="resultsName">Your ISO Readiness Report</h2>
       <div class="score-ring-wrap">
         <div class="score-circle" id="scoreCircle">
-          <div class="score-number" id="scoreNumber">—</div>
+          <div class="score-number" id="scoreNumber">â</div>
           <div class="score-label">out of 100</div>
         </div>
         <div class="iso-class-badge" id="isoClassBadge">Calculating...</div>
@@ -679,15 +693,13 @@
       <p id="scoreSummary" style="color:rgba(255,255,255,.75); font-size:14px; max-width:440px; margin:0 auto;"></p>
     </div>
 
-    <!-- Category Breakdown -->
     <div class="card">
       <div class="eyebrow">Score Breakdown</div>
       <h2>Performance by Category</h2>
-      <p class="muted" style="margin-bottom:18px">Scores reflect how well your department's current practices align with FSRS criteria in each area.</p>
+      <p class="muted" style="margin-bottom:18px">Scores reflect alignment with FSRS criteria. Categories with fewer assessed questions have wider confidence ranges.</p>
       <div id="breakdownList"></div>
     </div>
 
-    <!-- Top Recommendations -->
     <div class="card">
       <div class="eyebrow">Improvement Priorities</div>
       <h2>Where to Focus First</h2>
@@ -695,19 +707,17 @@
       <div id="recsList"></div>
     </div>
 
-    <!-- CTA -->
     <div class="cta-card">
       <h2>Ready to improve your ISO rating?</h2>
-      <p>Freedom From Dissonance is building tools to help volunteer and combination departments track pre-plans, document FSRS criteria, and prepare for ISO review — all in one platform.</p>
+      <p>Freedom From Dissonance is building tools to help volunteer and combination departments track pre-plans, document FSRS criteria, and prepare for ISO review â all in one platform.</p>
       <a href="https://freedomfromdissonance.com/pilot/" class="btn btn-white">
-        Join the Pilot Waitlist →
+        Join the Pilot Waitlist â
       </a>
     </div>
 
-    <!-- Retake -->
     <div style="text-align:center; padding-bottom:20px;">
       <button class="btn btn-ghost" onclick="retake()" style="min-width:180px;">
-        ↩ Retake Assessment
+        â© Retake Assessment
       </button>
     </div>
 
@@ -715,436 +725,282 @@
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════════════════
+<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
      JAVASCRIPT
-════════════════════════════════════════════════════════════════ -->
+ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
 <script>
 'use strict';
 
-// ─── Assessment Data ─────────────────────────────────────────────
-const CATEGORIES = [
+// âââ Category Config ââââââââââââââââââââââââââââââââââââââââââ
+const CAT = {
+  communications: { name: 'Emergency Communications & Dispatch', icon: 'ð', weight: 0.10 },
+  apparatus:      { name: 'Apparatus & Equipment',               icon: 'ð', weight: 0.15 },
+  personnel:      { name: 'Personnel & Staffing',                icon: 'ð¥', weight: 0.15 },
+  training:       { name: 'Training & Records',                  icon: 'ð', weight: 0.10 },
+  water:          { name: 'Water Supply',                        icon: 'ð§', weight: 0.35 },
+  preplanning:    { name: 'Pre-Incident Planning',               icon: 'ðï¸', weight: 0.15 }
+};
+
+// âââ Questions (12 total, 6 free + 6 gated) ââââââââââââââââââ
+const QUESTIONS = [
+  // ââ FREE (Q1âQ6) ââââââââââââââââââââââââââââââââââââââââââââ
   {
-    id: 'communications',
-    name: 'Emergency Communications & Dispatch',
-    icon: '🔊',
-    weight: 0.10,
-    questions: [
-      {
-        text: 'Does your department have access to a 24/7 dedicated dispatch center?',
-        options: [
-          'No — dispatch is informal, self-handled, or part-time',
-          'Shared/regional dispatch with limited documentation',
-          '24/7 dispatch access but processes aren\'t fully documented',
-          'Fully staffed 24/7 dispatch with documented procedures and performance standards'
-        ]
-      },
-      {
-        text: 'What is your typical dispatch-to-apparatus-en-route time after an alarm is received?',
-        options: [
-          'More than 3 minutes',
-          '2–3 minutes',
-          '1–2 minutes',
-          'Under 1 minute consistently'
-        ]
-      },
-      {
-        text: 'Does your dispatch center use Computer-Aided Dispatch (CAD) software?',
-        options: [
-          'No — dispatch is manual (phone, radio log, or paper)',
-          'Basic CAD with no pre-plan or GIS integration',
-          'CAD with some digital pre-plan or mapping access',
-          'Fully integrated CAD with real-time pre-plan data and GIS'
-        ]
-      },
-      {
-        text: 'Are dispatch procedures and response time metrics formally documented and reviewed?',
-        options: [
-          'No formal documentation exists',
-          'Some documentation but rarely updated or reviewed',
-          'Documented and reviewed occasionally (every few years)',
-          'Fully documented, reviewed annually, with metrics tracked and reported'
-        ]
-      }
+    id: 'comm_0', cat: 'communications', locked: false,
+    text: 'Does your department have access to a 24/7 dedicated dispatch center?',
+    options: [
+      'No â dispatch is informal, self-handled, or part-time',
+      'Shared/regional dispatch with limited documentation',
+      '24/7 dispatch access but processes aren\'t fully documented',
+      'Fully staffed 24/7 dispatch with documented procedures and performance standards'
     ]
   },
   {
-    id: 'apparatus',
-    name: 'Apparatus & Equipment',
-    icon: '🚒',
-    weight: 0.15,
-    questions: [
-      {
-        text: 'How many pumper trucks does your department operate that meet or exceed NFPA 1901 standards?',
-        options: [
-          'None that fully meet NFPA 1901 — apparatus is aging or non-compliant',
-          '1 pumper meeting standards — limited reserve capacity',
-          '2 pumpers meeting standards — adequate first-alarm response',
-          '3 or more compliant pumpers with documented reserve capability'
-        ]
-      },
-      {
-        text: 'How rigorously are your apparatus maintained and inspected?',
-        options: [
-          'No formal maintenance schedule — repairs are reactive',
-          'Annual inspections only — no documented daily/weekly checks',
-          'Scheduled maintenance exists but daily inspection logs are inconsistent',
-          'Documented preventive maintenance schedule with daily apparatus checks and signed logs'
-        ]
-      },
-      {
-        text: 'Does your department have access to an aerial device (ladder truck) for multi-story response?',
-        options: [
-          'No aerial device and no mutual aid agreement within FSRS distance',
-          'Mutual aid aerial available but response time exceeds FSRS requirements',
-          'Mutual aid aerial within FSRS distance with documented agreement',
-          'Department-owned aerial device meeting NFPA 1901 — staffed and ready'
-        ]
-      },
-      {
-        text: 'What is the overall condition and age of your primary apparatus fleet?',
-        options: [
-          'Fleet is primarily 20+ years old with multiple units out of service',
-          'Fleet is 15–20 years old — serviceable but approaching replacement',
-          'Fleet is 10–15 years old — good condition with active replacement plan',
-          'Fleet is under 10 years old — excellent condition with funded replacement schedule'
-        ]
-      }
+    id: 'app_0', cat: 'apparatus', locked: false,
+    text: 'How many pumper trucks does your department operate that meet or exceed NFPA 1901 standards?',
+    options: [
+      'None that fully meet NFPA 1901 â apparatus is aging or non-compliant',
+      '1 pumper meeting standards â limited reserve capacity',
+      '2 pumpers meeting standards â adequate first-alarm response',
+      '3 or more compliant pumpers with documented reserve capability'
     ]
   },
   {
-    id: 'personnel',
-    name: 'Personnel & Staffing',
-    icon: '👥',
-    weight: 0.15,
-    questions: [
-      {
-        text: 'How many personnel can your department reliably put on scene for a first-alarm residential structure fire?',
-        options: [
-          'Fewer than 4 — crew assembly is unpredictable',
-          '4–6 on scene within NFPA 1720 benchmarks inconsistently',
-          '6–10 personnel consistently meeting NFPA 1720 benchmarks',
-          '10+ personnel on scene reliably, meeting or exceeding NFPA 1710/1720'
-        ]
-      },
-      {
-        text: 'Does your department track and measure response time performance against NFPA 1720 benchmarks?',
-        options: [
-          'No tracking in place',
-          'Informal tracking — data is rarely reviewed',
-          'Response times tracked and reviewed annually',
-          'Response times tracked, benchmarked, and reported to leadership/board regularly'
-        ]
-      },
-      {
-        text: 'What is the trend in your active membership/roster over the past 3 years?',
-        options: [
-          'Significant decline — roster is critically short',
-          'Moderate decline — recruitment is a known challenge',
-          'Stable — roster holding but not growing',
-          'Growing — active recruitment program with measurable results'
-        ]
-      },
-      {
-        text: 'Does your department have a formal mutual aid agreement that supplements your staffing for major incidents?',
-        options: [
-          'No mutual aid agreement in place',
-          'Informal mutual aid only — no documented agreement',
-          'Written mutual aid agreement in place — tested occasionally',
-          'Active mutual aid agreement, regularly exercised, with pre-identified resources and contact protocols'
-        ]
-      }
+    id: 'app_1', cat: 'apparatus', locked: false,
+    text: 'How rigorously are your apparatus maintained and inspected?',
+    options: [
+      'No formal maintenance schedule â repairs are reactive',
+      'Annual inspections only â no documented daily/weekly checks',
+      'Scheduled maintenance exists but daily inspection logs are inconsistent',
+      'Documented preventive maintenance schedule with daily apparatus checks and signed logs'
     ]
   },
   {
-    id: 'training',
-    name: 'Training & Records',
-    icon: '📚',
-    weight: 0.10,
-    questions: [
-      {
-        text: 'Do your firefighters meet minimum training hour requirements (NFPA 1001 or your state equivalent)?',
-        options: [
-          'Most active members do not meet minimum hour requirements',
-          'Fewer than half of active members are fully certified',
-          'Most active members certified — tracking and follow-up on gaps',
-          'All active members certified with a documented annual training calendar'
-        ]
-      },
-      {
-        text: 'How frequently does your department conduct structured company-level training drills?',
-        options: [
-          'Rarely or never — training is ad hoc',
-          'A few times per year — no regular schedule',
-          'Monthly drills — sometimes skipped',
-          'Monthly or more, with documented drill reports and attendance records'
-        ]
-      },
-      {
-        text: 'Are training records maintained in a format that can be produced for an ISO review?',
-        options: [
-          'No formal training records exist',
-          'Paper records exist but are incomplete or hard to locate',
-          'Digital records in place — mostly complete',
-          'Complete digital training records, easily exportable, with all certifications on file'
-        ]
-      },
-      {
-        text: 'Do your company officers hold formal officer-level certifications (NFPA 1021 Fire Officer I or equivalent)?',
-        options: [
-          'Most officers have no formal officer certification',
-          'Some officers certified — not a department requirement',
-          'Majority of officers certified — working toward full compliance',
-          'All company officers certified at Fire Officer I or above'
-        ]
-      }
+    id: 'pers_0', cat: 'personnel', locked: false,
+    text: 'How many personnel can your department reliably put on scene for a first-alarm residential structure fire?',
+    options: [
+      'Fewer than 4 â crew assembly is unpredictable',
+      '4â6 on scene within NFPA 1720 benchmarks inconsistently',
+      '6â10 personnel consistently meeting NFPA 1720 benchmarks',
+      '10+ personnel on scene reliably, meeting or exceeding NFPA 1710/1720'
     ]
   },
   {
-    id: 'water',
-    name: 'Water Supply',
-    icon: '💧',
-    weight: 0.35,
-    questions: [
-      {
-        text: 'What percentage of your primary response area is covered by a hydrant system?',
-        options: [
-          'Less than 25% hydrant coverage — most responses rely on tankers',
-          '25–50% coverage — significant rural or unhydranted areas',
-          '50–75% coverage — most developed areas served by hydrants',
-          'Over 75% of response area has hydrant coverage'
-        ]
-      },
-      {
-        text: 'Are your fire hydrants flow-tested and inspected on a regular schedule?',
-        options: [
-          'No formal inspection program — hydrant condition is largely unknown',
-          'Hydrants inspected occasionally but not on a documented annual schedule',
-          'Annual inspection in place — flow testing records exist but may be incomplete',
-          'Full annual hydrant inspection and flow testing with documented records accessible for ISO review'
-        ]
-      },
-      {
-        text: 'For areas without hydrant coverage, does your department have adequate tanker/tender capacity?',
-        options: [
-          'No tankers — no alternative water supply capability for rural areas',
-          '1 tanker available — limited shuttle capacity for sustained operations',
-          'Tanker capacity sufficient for most rural responses with documented procedures',
-          'Full tanker shuttle capability with mutual aid agreements and demonstrated capacity for 250 GPM sustained delivery'
-        ]
-      },
-      {
-        text: 'Are hydrant locations, flow rates, and last test dates recorded in a centralized, accessible system?',
-        options: [
-          'No centralized hydrant records exist',
-          'Paper records only — not easily accessible in the field',
-          'Digital records exist — not always current or field-accessible',
-          'Complete digital hydrant database with locations, flow data, test dates — accessible by crews'
-        ]
-      }
+    id: 'pers_1', cat: 'personnel', locked: false,
+    text: 'What is the trend in your active membership/roster over the past 3 years?',
+    options: [
+      'Significant decline â roster is critically short',
+      'Moderate decline â recruitment is a known challenge',
+      'Stable â roster holding but not growing',
+      'Growing â active recruitment program with measurable results'
     ]
   },
   {
-    id: 'preplanning',
-    name: 'Pre-Incident Planning & Community Risk',
-    icon: '🏗️',
-    weight: 0.15,
-    questions: [
-      {
-        text: 'What percentage of target hazard occupancies in your jurisdiction have a current pre-incident plan on file?',
-        options: [
-          'Less than 25% — pre-planning is minimal or non-existent',
-          '25–50% — some target hazards covered, significant gaps remain',
-          '50–75% — most high-priority occupancies have plans, updates inconsistent',
-          'Over 75% of target hazards have current, documented pre-incident plans'
-        ]
-      },
-      {
-        text: 'How do crews access pre-incident plans during an emergency response?',
-        options: [
-          'Pre-plans are not accessible in the field — paper binders at the station only',
-          'Paper binders in some apparatus — not standardized',
-          'Digital access available but inconsistent across apparatus',
-          'Pre-plans accessible on mobile devices or in-cab tablets with current data for all apparatus'
-        ]
-      },
-      {
-        text: 'Does your department conduct a formal Community Risk Reduction (CRR) program?',
-        options: [
-          'No CRR program — no public fire safety education activities',
-          'Ad hoc activities (fire extinguisher demos, occasional school visits) — no formal program',
-          'Structured CRR program with annual activities, but limited documentation',
-          'Formal CRR program with documented activities, outcomes tracking, and annual reporting'
-        ]
-      },
-      {
-        text: 'Does your department analyze incident data to identify and mitigate community fire risk?',
-        options: [
-          'No incident data analysis in place',
-          'Basic NFIRS reporting only — data not reviewed for risk patterns',
-          'Annual review of incident data with informal discussion at leadership level',
-          'Regular incident data analysis used to drive CRR priorities, resource allocation, and training focus'
-        ]
-      }
+    id: 'train_0', cat: 'training', locked: false,
+    text: 'Do your firefighters meet minimum training hour requirements (NFPA 1001 or your state equivalent)?',
+    options: [
+      'Most active members do not meet minimum hour requirements',
+      'Fewer than half of active members are fully certified',
+      'Most active members certified â tracking and follow-up on gaps',
+      'All active members certified with a documented annual training calendar'
+    ]
+  },
+  // ââ GATED (Q7âQ12) ââââââââââââââââââââââââââââââââââââââââââ
+  {
+    id: 'train_1', cat: 'training', locked: true,
+    text: 'How frequently does your department conduct structured company-level training drills?',
+    options: [
+      'Rarely or never â training is ad hoc',
+      'A few times per year â no regular schedule',
+      'Monthly drills â sometimes skipped',
+      'Monthly or more, with documented drill reports and attendance records'
+    ]
+  },
+  {
+    id: 'water_0', cat: 'water', locked: true,
+    text: 'What percentage of your primary response area is covered by a hydrant system?',
+    options: [
+      'Less than 25% hydrant coverage â most responses rely on tankers',
+      '25â50% coverage â significant rural or unhydranted areas',
+      '50â75% coverage â most developed areas served by hydrants',
+      'Over 75% of response area has hydrant coverage'
+    ]
+  },
+  {
+    id: 'water_1', cat: 'water', locked: true,
+    text: 'Are your fire hydrants flow-tested and inspected on a regular schedule?',
+    options: [
+      'No formal inspection program â hydrant condition is largely unknown',
+      'Hydrants inspected occasionally but not on a documented annual schedule',
+      'Annual inspection in place â flow testing records exist but may be incomplete',
+      'Full annual hydrant inspection and flow testing with documented records accessible for ISO review'
+    ]
+  },
+  {
+    id: 'water_2', cat: 'water', locked: true,
+    text: 'For areas without hydrant coverage, does your department have adequate tanker/tender capacity?',
+    options: [
+      'No tankers â no alternative water supply capability for rural areas',
+      '1 tanker available â limited shuttle capacity for sustained operations',
+      'Tanker capacity sufficient for most rural responses with documented procedures',
+      'Full tanker shuttle capability with mutual aid agreements and demonstrated capacity for 250 GPM sustained delivery'
+    ]
+  },
+  {
+    id: 'preplan_0', cat: 'preplanning', locked: true,
+    text: 'What percentage of target hazard occupancies in your jurisdiction have a current pre-incident plan on file?',
+    options: [
+      'Less than 25% â pre-planning is minimal or non-existent',
+      '25â50% â some target hazards covered, significant gaps remain',
+      '50â75% â most high-priority occupancies have plans, updates inconsistent',
+      'Over 75% of target hazards have current, documented pre-incident plans'
+    ]
+  },
+  {
+    id: 'preplan_1', cat: 'preplanning', locked: true,
+    text: 'How do crews access pre-incident plans during an emergency response?',
+    options: [
+      'Pre-plans are not accessible in the field â paper binders at the station only',
+      'Paper binders in some apparatus â not standardized',
+      'Digital access available but inconsistent across apparatus',
+      'Pre-plans accessible on mobile devices or in-cab tablets with current data for all apparatus'
     ]
   }
 ];
 
-// ─── State ─────────────────────────────────────────────────────
+const FREE_COUNT  = QUESTIONS.filter(q => !q.locked).length;  // 6
+const TOTAL_COUNT = QUESTIONS.length;                          // 12
+
+// âââ State ââââââââââââââââââââââââââââââââââââââââââââââââââââ
 const state = {
-  catIndex: 0,
-  answers: {},  // keyed by "catId_qIndex" → 0-3
+  answers: {},        // id â 0â3
+  gateSubmitted: false,
   lead: {}
 };
 
-// ─── Screen Management ──────────────────────────────────────────
+// âââ Screen Management ââââââââââââââââââââââââââââââââââââââââ
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// âââ Start Assessment âââââââââââââââââââââââââââââââââââââââââ
 function startAssessment() {
-  state.catIndex = 0;
-  state.answers = {};
+  renderQuestions();
   document.getElementById('progressWrap').style.display = 'block';
-  renderCategory();
-  showScreen('questions');
+  showScreen('assessment');
 }
 
-// ─── Progress ──────────────────────────────────────────────────
-function updateProgress(catIndex) {
-  const total = CATEGORIES.length;
-  const pct = Math.round((catIndex / total) * 100);
-  document.getElementById('progressLabel').textContent = `Category ${catIndex + 1} of ${total}`;
-  document.getElementById('progressPct').textContent = pct + '%';
-  document.getElementById('progressFill').style.width = pct + '%';
-}
+// âââ Render Questions âââââââââââââââââââââââââââââââââââââââââ
+function renderQuestions() {
+  const freeEl   = document.getElementById('freeQuestions');
+  const lockedEl = document.getElementById('lockedQuestions');
+  freeEl.innerHTML   = '';
+  lockedEl.innerHTML = '';
 
-// ─── Render Category ───────────────────────────────────────────
-function renderCategory() {
-  const cat = CATEGORIES[state.catIndex];
-  updateProgress(state.catIndex);
-
-  let html = `
-    <div class="card">
-      <div class="cat-badge">${cat.icon} ${cat.name}</div>
-      <p class="muted" style="margin-bottom:24px">Weight: <strong>${Math.round(cat.weight * 100)}%</strong> of total ISO score · Questions ${state.catIndex * 4 + 1}–${state.catIndex * 4 + 4} of 24</p>
-  `;
-
-  cat.questions.forEach((q, qi) => {
-    const key = `${cat.id}_${qi}`;
-    html += `
-      <div class="question-block">
-        <div class="q-number">Question ${state.catIndex * 4 + qi + 1}</div>
-        <h3>${q.text}</h3>
-        <div class="options" id="opts_${key}">
-    `;
-    q.options.forEach((opt, oi) => {
-      const sel = state.answers[key] === oi ? ' selected' : '';
-      html += `
-        <label class="option-label${sel}" onclick="selectOption('${key}', ${oi}, this)">
-          <input type="radio" name="${key}" value="${oi}" ${sel ? 'checked' : ''}>
-          <div class="option-dot"></div>
-          <span>${opt}</span>
-        </label>
-      `;
-    });
-    html += `</div></div>`;
+  QUESTIONS.forEach((q, idx) => {
+    const html = buildQuestionCard(q, idx);
+    if (!q.locked) {
+      freeEl.insertAdjacentHTML('beforeend', html);
+    } else {
+      lockedEl.insertAdjacentHTML('beforeend', html);
+    }
   });
+}
 
-  // Nav
-  const isLast = state.catIndex === CATEGORIES.length - 1;
-  html += `
-    <div id="navAlert" class="alert alert-error">Please answer all 4 questions before continuing.</div>
-    <div class="nav-row">
-      ${state.catIndex > 0
-        ? '<button class="btn btn-ghost" onclick="prevCategory()">← Back</button>'
-        : ''
-      }
-      <button class="btn btn-primary" onclick="${isLast ? 'goToGate()' : 'nextCategory()'}">
-        ${isLast ? 'See My Results →' : 'Next Category →'}
-      </button>
+function buildQuestionCard(q, idx) {
+  const cat = CAT[q.cat];
+  return `
+    <div class="card" id="card_${q.id}">
+      <div class="cat-badge">${cat.icon} ${cat.name}</div>
+      <div class="q-num">Question ${idx + 1}</div>
+      <h3>${q.text}</h3>
+      <div class="options" id="opts_${q.id}">
+        ${q.options.map((opt, oi) => `
+          <label class="option-label" onclick="selectOption('${q.id}', ${oi}, this)">
+            <input type="radio" name="${q.id}" value="${oi}">
+            <div class="option-dot"></div>
+            <span>${opt}</span>
+          </label>
+        `).join('')}
+      </div>
     </div>
   `;
-  html += `</div>`; // end card
-
-  document.getElementById('questionContainer').innerHTML = html;
 }
 
-function selectOption(key, value, labelEl) {
-  state.answers[key] = value;
+// âââ Select Option ââââââââââââââââââââââââââââââââââââââââââââ
+function selectOption(qId, value, labelEl) {
+  state.answers[qId] = value;
+
+  // Update visual selection
   const container = labelEl.closest('.options');
   container.querySelectorAll('.option-label').forEach(l => l.classList.remove('selected'));
   labelEl.classList.add('selected');
-  document.getElementById('navAlert')?.classList.remove('visible');
+
+  updateProgress();
+  checkGateHighlight();
+  checkCanSubmit();
 }
 
-function allAnswered() {
-  const cat = CATEGORIES[state.catIndex];
-  return cat.questions.every((_, qi) => {
-    const key = `${cat.id}_${qi}`;
-    return state.answers[key] !== undefined;
-  });
+// âââ Progress Bar âââââââââââââââââââââââââââââââââââââââââââââ
+function updateProgress() {
+  const answered = Object.keys(state.answers).length;
+  const total    = state.gateSubmitted ? TOTAL_COUNT : FREE_COUNT;
+  const pct      = Math.round((answered / TOTAL_COUNT) * 100);
+
+  document.getElementById('progressLabel').textContent =
+    `${answered} of ${TOTAL_COUNT} questions answered`;
+  document.getElementById('progressPct').textContent  = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
 }
 
-function nextCategory() {
-  if (!allAnswered()) {
-    document.getElementById('navAlert').classList.add('visible');
-    window.scrollTo({ top: document.getElementById('questionContainer').offsetTop - 20, behavior: 'smooth' });
-    return;
+// âââ Gate Highlight (when all 6 free answered) ââââââââââââââââ
+function checkGateHighlight() {
+  if (state.gateSubmitted) return;
+  const freeAnswered = QUESTIONS.filter(q => !q.locked)
+    .every(q => state.answers[q.id] !== undefined);
+  const gateCard = document.getElementById('gateCard');
+  if (freeAnswered) {
+    gateCard.classList.add('gate-ready');
+    // Smooth scroll to gate if it's below the fold
+    setTimeout(() => {
+      const rect = gateCard.getBoundingClientRect();
+      if (rect.top > window.innerHeight * 0.8) {
+        gateCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
   }
-  state.catIndex++;
-  renderCategory();
-  showScreen('questions');
 }
 
-function prevCategory() {
-  state.catIndex--;
-  renderCategory();
-  showScreen('questions');
-}
-
-function goToGate() {
-  if (!allAnswered()) {
-    document.getElementById('navAlert').classList.add('visible');
-    return;
-  }
-  document.getElementById('progressWrap').style.display = 'none';
-  showScreen('gate');
-}
-
-// ─── Email Gate ────────────────────────────────────────────────
+// âââ Submit Gate ââââââââââââââââââââââââââââââââââââââââââââââ
 async function submitGate() {
-  const first  = document.getElementById('gFirst').value.trim();
-  const last   = document.getElementById('gLast').value.trim();
-  const email  = document.getElementById('gEmail').value.trim();
-  const dept   = document.getElementById('gDept').value.trim();
+  const first    = document.getElementById('gFirst').value.trim();
+  const last     = document.getElementById('gLast').value.trim();
+  const email    = document.getElementById('gEmail').value.trim();
+  const dept     = document.getElementById('gDept').value.trim();
   const isoClass = document.getElementById('gClass').value;
+  const alertEl  = document.getElementById('gateAlert');
 
-  const alert = document.getElementById('gateAlert');
-
+  // Validate required fields
   if (!first || !last || !email || !dept) {
-    alert.classList.add('visible');
+    alertEl.textContent = 'Please fill in all required fields.';
+    alertEl.classList.add('visible');
     return;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert.textContent = 'Please enter a valid email address.';
-    alert.classList.add('visible');
+    alertEl.textContent = 'Please enter a valid email address.';
+    alertEl.classList.add('visible');
     return;
   }
-
-  alert.classList.remove('visible');
+  alertEl.classList.remove('visible');
 
   const btn = document.getElementById('gateSubmitBtn');
-  btn.innerHTML = '<span class="spinner"></span> Loading your results...';
-  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Unlocking...';
+  btn.disabled  = true;
 
   state.lead = { first, last, email, dept, isoClass };
 
-  // Build scores JSON
-  const scoresJson = buildScores();
-
-  // ── POST lead data to Mailchimp via Vercel serverless function ──
+  // POST to Mailchimp via Vercel serverless function
   try {
     await fetch('/api/subscribe', {
       method: 'POST',
@@ -1152,135 +1008,162 @@ async function submitGate() {
       body: JSON.stringify({ first, last, email, dept, isoClass })
     });
   } catch (err) {
-    // Non-blocking — proceed to results even if network fails
-    console.warn('[FFD ISO Assessment] Subscribe error:', err);
+    console.warn('[FFD] Subscribe error:', err);
   }
 
-  // Brief delay for UX
-  await new Promise(r => setTimeout(r, 600));
+  // Brief UX delay
+  await new Promise(r => setTimeout(r, 500));
 
-  renderResults(scoresJson);
-  showScreen('results');
+  // Unlock
+  state.gateSubmitted = true;
+  document.getElementById('gateBody').style.display   = 'none';
+  document.getElementById('gateUnlocked').style.display = 'flex';
+  document.getElementById('gateCard').classList.remove('gate-ready');
+
+  const section  = document.getElementById('lockedSection');
+  const overlay  = document.getElementById('lockedOverlay');
+  section.classList.remove('locked');
+  overlay.classList.add('hidden');
+
+  // Show submit row
+  document.getElementById('submitRow').style.display = 'block';
+
+  // Scroll to first gated question
+  setTimeout(() => {
+    const firstLocked = document.getElementById('card_train_1');
+    if (firstLocked) firstLocked.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 400);
+
+  updateProgress();
+  checkCanSubmit();
 }
 
-// ─── Scoring ───────────────────────────────────────────────────
+// âââ Enable Submit Button âââââââââââââââââââââââââââââââââââââ
+function checkCanSubmit() {
+  if (!state.gateSubmitted) return;
+  const allAnswered = QUESTIONS.every(q => state.answers[q.id] !== undefined);
+  const btn  = document.getElementById('submitBtn');
+  const hint = document.getElementById('submitHint');
+  btn.disabled = !allAnswered;
+  if (allAnswered) {
+    hint.style.display = 'none';
+    btn.scrollIntoView && false; // don't auto-scroll; let user scroll naturally
+  } else {
+    const remaining = QUESTIONS.filter(q => state.answers[q.id] === undefined).length;
+    hint.textContent = `${remaining} question${remaining !== 1 ? 's' : ''} remaining.`;
+  }
+}
+
+// âââ Scoring ââââââââââââââââââââââââââââââââââââââââââââââââââ
 function buildScores() {
-  const catScores = CATEGORIES.map(cat => {
-    let raw = 0;
-    cat.questions.forEach((_, qi) => {
-      const key = `${cat.id}_${qi}`;
-      raw += (state.answers[key] ?? 0);
-    });
-    const maxRaw = cat.questions.length * 3;
-    const pct = Math.round((raw / maxRaw) * 100);
-    return { id: cat.id, name: cat.name, icon: cat.icon, weight: cat.weight, pct, raw, maxRaw };
+  // Group answers by category
+  const catData = {};
+  Object.entries(CAT).forEach(([catId, cfg]) => {
+    catData[catId] = { ...cfg, catId, answers: [], maxPossible: 0 };
   });
 
-  const weighted = catScores.reduce((sum, c) => sum + (c.pct * c.weight), 0);
-  const overall = Math.round(weighted);
+  QUESTIONS.forEach(q => {
+    const val = state.answers[q.id] ?? 0;
+    catData[q.cat].answers.push(val);
+    catData[q.cat].maxPossible += 3;
+  });
+
+  const catScores = Object.values(catData).map(c => {
+    const raw = c.answers.reduce((s, v) => s + v, 0);
+    const pct = c.maxPossible > 0 ? Math.round((raw / c.maxPossible) * 100) : 0;
+    return { id: c.catId, name: c.name, icon: c.icon, weight: c.weight, pct };
+  });
+
+  const overall = Math.round(
+    catScores.reduce((sum, c) => sum + (c.pct * c.weight), 0)
+  );
 
   return { overall, catScores };
 }
 
 function getIsoClass(score) {
-  if (score >= 90) return { label: 'Estimated Class 1–2', color: '#16A34A', bg: 'rgba(22,163,74,.15)' };
-  if (score >= 75) return { label: 'Estimated Class 3–4', color: '#2563EB', bg: 'rgba(37,99,235,.15)' };
-  if (score >= 55) return { label: 'Estimated Class 5–6', color: '#D97706', bg: 'rgba(217,119,6,.15)' };
-  if (score >= 35) return { label: 'Estimated Class 7–8', color: '#EA580C', bg: 'rgba(234,88,12,.15)' };
-  return { label: 'Estimated Class 9–10', color: '#DC2626', bg: 'rgba(220,38,38,.15)' };
-}
-
-function getScoreRingColor(score) {
-  if (score >= 75) return '#16A34A';
-  if (score >= 55) return '#2563EB';
-  if (score >= 35) return '#D97706';
-  return '#DC2626';
+  if (score >= 90) return { label: 'Estimated Class 1â2', color: '#16A34A', bg: 'rgba(22,163,74,.15)' };
+  if (score >= 75) return { label: 'Estimated Class 3â4', color: '#2563EB', bg: 'rgba(37,99,235,.15)' };
+  if (score >= 55) return { label: 'Estimated Class 5â6', color: '#D97706', bg: 'rgba(217,119,6,.15)' };
+  if (score >= 35) return { label: 'Estimated Class 7â8', color: '#EA580C', bg: 'rgba(234,88,12,.15)' };
+  return            { label: 'Estimated Class 9â10',  color: '#DC2626', bg: 'rgba(220,38,38,.15)' };
 }
 
 function getSummaryText(score, lead) {
   const name = lead.first || 'Your department';
   if (score >= 85) return `${name}'s department shows strong ISO readiness across most categories. Focus on the gaps below to push toward a Class 1 or 2 rating.`;
-  if (score >= 65) return `${name}'s department has a solid foundation but meaningful improvement opportunities remain. Addressing the priorities below could move you 1–2 ISO classes.`;
-  if (score >= 45) return `${name}'s department has moderate readiness. Several key FSRS criteria need attention — targeted improvements could make a significant difference in your next review.`;
+  if (score >= 65) return `${name}'s department has a solid foundation but meaningful improvement opportunities remain. Addressing the priorities below could move you 1â2 ISO classes.`;
+  if (score >= 45) return `${name}'s department has moderate readiness. Several key FSRS criteria need attention â targeted improvements could make a significant difference in your next review.`;
   return `${name}'s department has significant gaps across multiple FSRS categories. The good news: this assessment identifies exactly where to start.`;
 }
 
-// ─── Recommendations ───────────────────────────────────────────
+// âââ Recommendations ââââââââââââââââââââââââââââââââââââââââââ
 function getRecommendations(catScores) {
-  const recs = [];
-
-  catScores.forEach(cat => {
-    cat.questions?.forEach((q, qi) => {
-      // We'll pull top recs from lowest-scoring questions
-    });
-  });
-
-  // Generate recs based on lowest category scores and worst individual answers
-  const sorted = [...catScores].sort((a, b) => (a.pct * a.weight) - (b.pct * b.weight));
-
   const recBank = {
     communications: [
-      { threshold: 66, text: 'Formalize your dispatch procedures and begin tracking response time benchmarks. Even simple metrics (alarm receipt → dispatch time → on-scene time) create an auditable record for ISO reviewers.' },
-      { threshold: 99, text: 'Explore CAD software that integrates pre-plan data. Systems like Zoll Mobile or ImageTrend can dramatically reduce the time between alarm and crew briefing.' }
+      { threshold: 75, text: 'Formalize dispatch procedures and begin tracking response time benchmarks. Even simple metrics (alarm receipt â dispatch time â on-scene time) create an auditable record for ISO reviewers.' }
     ],
     apparatus: [
-      { threshold: 66, text: 'Develop a written apparatus replacement schedule — even if funding isn\'t immediate. ISO reviewers credit departments for documented planning. FEMA AFG grants can fund apparatus purchases.' },
-      { threshold: 99, text: 'Implement daily apparatus inspection logs. A simple paper or digital form that takes 10 minutes per shift creates documentation ISO evaluators look for.' }
+      { threshold: 66, text: 'Develop a written apparatus replacement schedule â even if funding isn\'t immediate. ISO reviewers credit departments for documented planning. FEMA AFG grants can fund apparatus purchases.' },
+      { threshold: 99, text: 'Implement daily apparatus inspection logs. A simple form that takes 10 minutes per shift creates the documentation ISO evaluators look for.' }
     ],
     personnel: [
-      { threshold: 66, text: 'Implement a formal membership recruitment and retention program. Even informal initiatives (ride-along nights, community outreach) produce measurable results when documented.' },
+      { threshold: 66, text: 'Launch a formal membership recruitment and retention program. Even modest initiatives (ride-along nights, community outreach) produce measurable results when documented.' },
       { threshold: 99, text: 'Establish written mutual aid agreements with neighboring departments. These agreements count toward your FSRS score and cost nothing to execute.' }
     ],
     training: [
-      { threshold: 66, text: 'Implement a monthly drill calendar and require signed attendance records. Training documentation is a direct input into your ISO score — undocumented training doesn\'t count.' },
-      { threshold: 99, text: 'Prioritize company officer certifications. NFPA 1021 Fire Officer I certification for all officers is one of the most direct paths to improving your FSRS training score.' }
+      { threshold: 66, text: 'Implement a monthly drill calendar and require signed attendance records. Training documentation is a direct FSRS input â undocumented training earns no ISO credit.' },
+      { threshold: 99, text: 'Prioritize NFPA 1001 certifications for all active members. Certification rates are one of the most directly auditable training metrics during ISO review.' }
     ],
     water: [
-      { threshold: 66, text: 'Establish an annual hydrant inspection and flow testing program. Coordinate with your water utility — they often share the cost. Undocumented hydrants receive no ISO credit.' },
-      { threshold: 99, text: 'Build a digital hydrant database with GPS locations, flow rates, and last test dates. This is a high-impact, low-cost improvement that directly supports your 35%-weighted water supply score.' }
+      { threshold: 50, text: 'Establish an annual hydrant inspection and flow testing program. Coordinate with your water utility â they often share the cost. Undocumented hydrants receive no ISO credit.' },
+      { threshold: 75, text: 'Build a digital hydrant database with GPS locations, flow rates, and last test dates. This is a high-impact, low-cost improvement that directly supports your 35%-weighted water supply score.' },
+      { threshold: 99, text: 'If tanker capacity is limited, explore mutual aid tanker agreements with neighboring departments. Documented agreements for supplemental water supply count toward your rural water score.' }
     ],
     preplanning: [
-      { threshold: 66, text: 'Prioritize pre-incident plans for your top 20 target hazard occupancies — schools, large commercial buildings, industrial facilities. Even basic plans for these locations move the needle on your FSRS score.' },
+      { threshold: 66, text: 'Prioritize pre-incident plans for your top 20 target hazard occupancies â schools, large commercial buildings, industrial facilities. Even basic plans for these locations move your FSRS score.' },
       { threshold: 99, text: 'Move pre-plans to a mobile-accessible format. Paper binders at the station provide no ISO benefit for field crews. Tablet-based pre-plan access is increasingly a baseline expectation.' }
     ]
   };
 
+  const sorted = [...catScores].sort((a, b) => (a.pct * a.weight) - (b.pct * b.weight));
   const results = [];
+
   sorted.forEach(cat => {
     const bank = recBank[cat.id] || [];
-    const applicable = bank.filter(r => cat.pct < r.threshold);
-    applicable.forEach(r => {
-      results.push({ catName: cat.name, catIcon: cat.icon, text: r.text, score: cat.pct });
+    bank.filter(r => cat.pct < r.threshold).forEach(r => {
+      results.push({ catName: cat.name, catIcon: cat.icon, text: r.text });
     });
   });
 
-  // Dedupe and return top 5
   return results.slice(0, 5);
 }
 
-// ─── Render Results ────────────────────────────────────────────
+// âââ Show Results âââââââââââââââââââââââââââââââââââââââââââââ
+function showResults() {
+  const scores = buildScores();
+  renderResults(scores);
+  document.getElementById('progressWrap').style.display = 'none';
+  showScreen('results');
+}
+
 function renderResults(scores) {
   const { overall, catScores } = scores;
-  const isoInfo = getIsoClass(overall);
-  const ringColor = getScoreRingColor(overall);
+  const isoInfo   = getIsoClass(overall);
+  const ringColor = overall >= 75 ? '#16A34A' : overall >= 55 ? '#2563EB' : overall >= 35 ? '#D97706' : '#DC2626';
 
-  // Hero
   document.getElementById('resultsName').textContent =
     `${state.lead.first ? state.lead.first + '\'s ' : ''}ISO Readiness Report`;
 
-  const scoreEl = document.getElementById('scoreNumber');
-  scoreEl.innerHTML = `${overall}<span class="score-pct"></span>`;
-
-  const circle = document.getElementById('scoreCircle');
-  circle.style.borderColor = ringColor;
+  document.getElementById('scoreNumber').innerHTML = `${overall}<span class="score-pct"></span>`;
+  document.getElementById('scoreCircle').style.borderColor = ringColor;
 
   const badge = document.getElementById('isoClassBadge');
-  badge.textContent = isoInfo.label;
+  badge.textContent      = isoInfo.label;
   badge.style.background = isoInfo.bg;
-  badge.style.color = isoInfo.color;
+  badge.style.color      = isoInfo.color;
 
-  document.getElementById('scoreSummary').textContent =
-    getSummaryText(overall, state.lead);
+  document.getElementById('scoreSummary').textContent = getSummaryText(overall, state.lead);
 
   // Category breakdown
   let breakdownHtml = '';
@@ -1301,7 +1184,6 @@ function renderResults(scores) {
   });
   document.getElementById('breakdownList').innerHTML = breakdownHtml;
 
-  // Animate bars on next tick
   setTimeout(() => {
     document.querySelectorAll('.breakdown-bar[data-width]').forEach(bar => {
       bar.style.width = bar.getAttribute('data-width');
@@ -1329,22 +1211,42 @@ function renderResults(scores) {
   document.getElementById('recsList').innerHTML = recsHtml;
 }
 
-// ─── Retake ─────────────────────────────────────────────────────
+// âââ Retake âââââââââââââââââââââââââââââââââââââââââââââââââââ
 function retake() {
-  state.catIndex = 0;
   state.answers = {};
+  state.gateSubmitted = false;
   state.lead = {};
-  document.getElementById('gFirst').value = '';
-  document.getElementById('gLast').value = '';
-  document.getElementById('gEmail').value = '';
-  document.getElementById('gDept').value = '';
+
+  // Reset form fields
+  ['gFirst','gLast','gEmail','gDept'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('gClass').value = '';
   document.getElementById('gateAlert').classList.remove('visible');
-  const btn = document.getElementById('gateSubmitBtn');
-  btn.innerHTML = 'Unlock My Results →';
-  btn.disabled = false;
-  document.getElementById('progressWrap').style.display = 'none';
-  showScreen('intro');
+
+  // Reset gate UI
+  document.getElementById('gateBody').style.display     = '';
+  document.getElementById('gateUnlocked').style.display = 'none';
+  document.getElementById('gateCard').classList.remove('gate-ready');
+  const gBtn = document.getElementById('gateSubmitBtn');
+  gBtn.innerHTML = 'Unlock Remaining Questions â';
+  gBtn.disabled  = false;
+
+  // Reset locked section
+  document.getElementById('lockedSection').classList.add('locked');
+  document.getElementById('lockedOverlay').classList.remove('hidden');
+
+  // Reset submit row
+  document.getElementById('submitRow').style.display = 'none';
+  const sBtn = document.getElementById('submitBtn');
+  sBtn.disabled = true;
+  document.getElementById('submitHint').style.display = '';
+  document.getElementById('submitHint').textContent = 'Answer all 12 questions to see your results.';
+
+  // Re-render question cards (clears selections)
+  renderQuestions();
+
+  document.getElementById('progressWrap').style.display = 'block';
+  updateProgress();
+  showScreen('assessment');
 }
 </script>
 </body>
