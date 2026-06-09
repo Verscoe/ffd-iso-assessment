@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free ISO Readiness Assessment | Freedom From Dissonance</title>
   <style>
-    /* âââ Design Tokens âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Design Tokens ─────────────────────────────────────────── */
     :root {
       --blue:    #0067FF;
       --navy:    #0F172A;
@@ -19,7 +19,7 @@
       --shadow:  0 4px 24px rgba(0,0,0,.10);
     }
 
-    /* âââ Reset / Base ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Reset / Base ──────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -30,7 +30,7 @@
       line-height: 1.6;
     }
 
-    /* âââ Header ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Header ────────────────────────────────────────────────── */
     .header {
       background: var(--navy);
       padding: 16px 24px;
@@ -54,7 +54,7 @@
       font-size: 12px;
     }
 
-    /* âââ Progress Bar ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Progress Bar ──────────────────────────────────────────── */
     .progress-wrap {
       background: var(--navy);
       padding: 0 24px 14px;
@@ -79,7 +79,7 @@
       transition: width .4s ease;
     }
 
-    /* âââ Layout ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Layout ────────────────────────────────────────────────── */
     .screen { display: none; }
     .screen.active { display: block; }
     .container {
@@ -88,7 +88,7 @@
       padding: 32px 20px 80px;
     }
 
-    /* âââ Cards âââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Cards ─────────────────────────────────────────────────── */
     .card {
       background: var(--white);
       border-radius: var(--radius);
@@ -98,7 +98,7 @@
     }
     @media (max-width: 480px) { .card { padding: 18px 16px; } }
 
-    /* âââ Typography âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Typography ─────────────────────────────────────────────── */
     .eyebrow {
       font-size: 11px;
       font-weight: 700;
@@ -130,7 +130,7 @@
     p { font-size: 15px; color: var(--body); }
     .muted { color: #6B7A8D; font-size: 13px; }
 
-    /* âââ Category Badge âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Category Badge ─────────────────────────────────────────── */
     .cat-badge {
       display: inline-block;
       background: var(--bg);
@@ -145,7 +145,7 @@
       margin-bottom: 12px;
     }
 
-    /* âââ Question Number âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Question Number ─────────────────────────────────────────── */
     .q-num {
       font-size: 11px;
       font-weight: 700;
@@ -155,7 +155,7 @@
       margin-bottom: 6px;
     }
 
-    /* âââ Radio Options ââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Radio Options ──────────────────────────────────────────── */
     .options { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 
     .option-label {
@@ -198,7 +198,7 @@
     .option-label.selected .option-dot { border-color: var(--blue); }
     .option-label.selected .option-dot::after { opacity: 1; }
 
-    /* âââ Buttons ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Buttons ────────────────────────────────────────────────── */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -223,7 +223,7 @@
     .btn-full { width: 100%; }
     .btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
 
-    /* âââ Intro Screen âââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Intro Screen ───────────────────────────────────────────── */
     .intro-hero {
       background: var(--navy);
       border-radius: var(--radius);
@@ -270,7 +270,7 @@
     }
     .cat-weight { margin-left: auto; font-size: 11px; color: var(--blue); font-weight: 700; }
 
-    /* âââ Gate Card ââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Gate Card ──────────────────────────────────────────────── */
     .gate-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -306,7 +306,7 @@
     .gate-unlocked-icon { font-size: 22px; }
     .gate-unlocked-text { font-size: 14px; font-weight: 600; color: var(--success); }
 
-    /* âââ Form âââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Form ───────────────────────────────────────────────────── */
     .form-group { margin-bottom: 14px; }
     .form-group label {
       display: block;
@@ -339,7 +339,7 @@
       margin-top: 10px;
     }
 
-    /* âââ Alert ââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Alert ──────────────────────────────────────────────────── */
     .alert {
       padding: 11px 14px;
       border-radius: 8px;
@@ -350,7 +350,7 @@
     .alert-error { background: #FEE2E2; color: #B91C1C; border: 1px solid #FECACA; }
     .alert.visible { display: block; }
 
-    /* âââ Locked Section âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Locked Section ─────────────────────────────────────────── */
     .locked-section-wrap { position: relative; margin-bottom: 14px; }
 
     .locked-section {
@@ -388,7 +388,7 @@
       gap: 8px;
     }
 
-    /* âââ Submit Row âââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Submit Row ─────────────────────────────────────────────── */
     .submit-row {
       text-align: center;
       padding-top: 8px;
@@ -399,7 +399,7 @@
       margin-top: 10px;
     }
 
-    /* âââ Spinner ââââââââââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Spinner ────────────────────────────────────────────────── */
     .spinner {
       display: inline-block;
       width: 16px;
@@ -411,7 +411,7 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* âââ Results Screen âââââââââââââââââââââââââââââââââââââââââââ */
+    /* ─── Results Screen ─────────────────────────────────────────── */
     .results-hero {
       background: var(--navy);
       border-radius: var(--radius);
@@ -504,13 +504,13 @@
 </head>
 <body>
 
-<!-- âââ HEADER ââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ HEADER ══════════════════════════════════════════════════ -->
 <header class="header">
   <div class="header-brand">Freedom From <span>Dissonance</span></div>
   <div class="header-label">ISO Readiness Assessment</div>
 </header>
 
-<!-- âââ PROGRESS ââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══ PROGRESS ════════════════════════════════════════════════ -->
 <div class="progress-wrap" id="progressWrap" style="display:none">
   <div class="progress-meta">
     <span id="progressLabel">0 of 12 questions answered</span>
@@ -522,38 +522,38 @@
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-     SCREEN 0 â INTRO
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     SCREEN 0 — INTRO
+════════════════════════════════════════════════════════════════ -->
 <div class="screen active" id="screen-intro">
   <div class="container">
     <div class="intro-hero">
       <div class="eyebrow" style="color:rgba(255,255,255,.5)">Free Assessment</div>
       <h1>How ISO-Ready Is Your Fire Department?</h1>
-      <p>12 questions. About 3 minutes. Get an honest look at where your department stands on the criteria that determine your ISO Public Protection Classification â and where to focus first.</p>
+      <p>12 questions. About 3 minutes. Get an honest look at where your department stands on the criteria that determine your ISO Public Protection Classification — and where to focus first.</p>
       <button class="btn btn-red" onclick="startAssessment()" style="font-size:16px; padding:16px 32px;">
-        Start Free Assessment â
+        Start Free Assessment →
       </button>
     </div>
 
     <div class="feature-grid">
       <div class="feature-item">
-        <div class="feature-icon">ð</div>
+        <div class="feature-icon">📋</div>
         <div class="feature-label">12 Questions</div>
         <div class="feature-sub">6 FSRS categories</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">â±ï¸</div>
+        <div class="feature-icon">⏱️</div>
         <div class="feature-label">~3 Minutes</div>
         <div class="feature-sub">No login required</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">ð</div>
+        <div class="feature-icon">📊</div>
         <div class="feature-label">Your Score</div>
         <div class="feature-sub">+ estimated ISO class</div>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">ð¯</div>
+        <div class="feature-icon">🎯</div>
         <div class="feature-label">Top Priorities</div>
         <div class="feature-sub">Specific next steps</div>
       </div>
@@ -561,21 +561,21 @@
 
     <div class="card">
       <h3 style="margin-bottom:12px">What this assessment covers</h3>
-      <p class="muted" style="margin-bottom:14px">Based on FSRS (Fire Suppression Rating Schedule) criteria â the same framework ISO uses to assign your Public Protection Classification.</p>
+      <p class="muted" style="margin-bottom:14px">Based on FSRS (Fire Suppression Rating Schedule) criteria — the same framework ISO uses to assign your Public Protection Classification.</p>
       <div class="category-list">
-        <div class="cat-pill">ð Communications <span class="cat-weight">10%</span></div>
-        <div class="cat-pill">ð Apparatus &amp; Equipment <span class="cat-weight">15%</span></div>
-        <div class="cat-pill">ð¥ Personnel &amp; Staffing <span class="cat-weight">15%</span></div>
-        <div class="cat-pill">ð Training &amp; Records <span class="cat-weight">10%</span></div>
-        <div class="cat-pill">ð§ Water Supply <span class="cat-weight">35%</span></div>
-        <div class="cat-pill">ðï¸ Pre-Incident Planning <span class="cat-weight">15%</span></div>
+        <div class="cat-pill">🔊 Communications <span class="cat-weight">10%</span></div>
+        <div class="cat-pill">🚒 Apparatus &amp; Equipment <span class="cat-weight">15%</span></div>
+        <div class="cat-pill">👥 Personnel &amp; Staffing <span class="cat-weight">15%</span></div>
+        <div class="cat-pill">📚 Training &amp; Records <span class="cat-weight">10%</span></div>
+        <div class="cat-pill">💧 Water Supply <span class="cat-weight">35%</span></div>
+        <div class="cat-pill">🏗️ Pre-Incident Planning <span class="cat-weight">15%</span></div>
       </div>
-      <p class="muted" style="margin-top:8px">Answer the first 6 questions to see how your department compares â then unlock your full results with a quick email.</p>
+      <p class="muted" style="margin-top:8px">Answer the first 6 questions to see how your department compares — then unlock your full results with a quick email.</p>
     </div>
 
     <div style="text-align:center">
       <button class="btn btn-red btn-full" onclick="startAssessment()" style="font-size:16px; padding:16px;">
-        Start Free Assessment â
+        Start Free Assessment →
       </button>
       <p class="muted" style="margin-top:10px">No account needed. Takes about 3 minutes.</p>
     </div>
@@ -583,21 +583,21 @@
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-     SCREEN 1 â ASSESSMENT
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     SCREEN 1 — ASSESSMENT
+════════════════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-assessment">
   <div class="container">
 
-    <!-- Questions 1â6 (free) -->
+    <!-- Questions 1–6 (free) -->
     <div id="freeQuestions"></div>
 
-    <!-- ââ GATE âââââââââââââââââââââââââââââââââââââââââââââââ -->
+    <!-- ── GATE ─────────────────────────────────────────────── -->
     <div class="gate-card" id="gateCard">
       <div class="gate-header">
-        <div class="lock-icon">ð</div>
+        <div class="lock-icon">🔒</div>
         <h2>Unlock your full results</h2>
-        <p>You're halfway through. Enter your info to unlock the remaining 6 questions and receive your personalized ISO Readiness Report â score, category breakdown, and top recommendations.</p>
+        <p>You're halfway through. Enter your info to unlock the remaining 6 questions and receive your personalized ISO Readiness Report — score, category breakdown, and top recommendations.</p>
       </div>
 
       <div class="gate-body" id="gateBody">
@@ -624,7 +624,7 @@
         <div class="form-group">
           <label for="gClass">Current ISO Class (if known)</label>
           <select id="gClass">
-            <option value="">â Select your current class â</option>
+            <option value="">— Select your current class —</option>
             <option value="1">Class 1 (Best)</option>
             <option value="2">Class 2</option>
             <option value="3">Class 3</option>
@@ -641,32 +641,32 @@
         </div>
 
         <button class="btn btn-red btn-full" id="gateSubmitBtn" onclick="submitGate()" style="font-size:15px; padding:14px;">
-          Unlock Remaining Questions â
+          Unlock Remaining Questions →
         </button>
-        <p class="privacy-note">ð No spam. Your info stays private.</p>
+        <p class="privacy-note">🔒 No spam. Your info stays private.</p>
       </div>
 
       <!-- Shown after unlock -->
       <div class="gate-unlocked" id="gateUnlocked" style="display:none">
-        <div class="gate-unlocked-icon">â</div>
-        <div class="gate-unlocked-text">Assessment unlocked â continue below to finish.</div>
+        <div class="gate-unlocked-icon">✅</div>
+        <div class="gate-unlocked-text">Assessment unlocked — continue below to finish.</div>
       </div>
     </div>
 
-    <!-- ââ LOCKED SECTION (Q7âQ12) âââââââââââââââââââââââââââââ -->
+    <!-- ── LOCKED SECTION (Q7–Q12) ───────────────────────────── -->
     <div class="locked-section-wrap">
       <div class="locked-section locked" id="lockedSection">
         <div id="lockedQuestions"></div>
       </div>
       <div class="locked-overlay" id="lockedOverlay">
-        <div class="lock-badge">ð Complete the form above to unlock</div>
+        <div class="lock-badge">🔒 Complete the form above to unlock</div>
       </div>
     </div>
 
-    <!-- ââ SUBMIT âââââââââââââââââââââââââââââââââââââââââââââââ -->
+    <!-- ── SUBMIT ─────────────────────────────────────────────── -->
     <div class="submit-row" id="submitRow" style="display:none">
       <button class="btn btn-primary btn-full" id="submitBtn" onclick="showResults()" style="font-size:16px; padding:16px;" disabled>
-        Get My Results â
+        Get My Results →
       </button>
       <p class="submit-hint" id="submitHint">Answer all 12 questions to see your results.</p>
     </div>
@@ -675,9 +675,9 @@
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-     SCREEN 2 â RESULTS
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+<!-- ═══════════════════════════════════════════════════════════════
+     SCREEN 2 — RESULTS
+════════════════════════════════════════════════════════════════ -->
 <div class="screen" id="screen-results">
   <div class="container">
 
@@ -685,7 +685,7 @@
       <h2 id="resultsName">Your ISO Readiness Report</h2>
       <div class="score-ring-wrap">
         <div class="score-circle" id="scoreCircle">
-          <div class="score-number" id="scoreNumber">â</div>
+          <div class="score-number" id="scoreNumber">—</div>
           <div class="score-label">out of 100</div>
         </div>
         <div class="iso-class-badge" id="isoClassBadge">Calculating...</div>
@@ -709,15 +709,15 @@
 
     <div class="cta-card">
       <h2>Ready to improve your ISO rating?</h2>
-      <p>Freedom From Dissonance is building tools to help volunteer and combination departments track pre-plans, document FSRS criteria, and prepare for ISO review â all in one platform.</p>
+      <p>Freedom From Dissonance is building tools to help volunteer and combination departments track pre-plans, document FSRS criteria, and prepare for ISO review — all in one platform.</p>
       <a href="https://freedomfromdissonance.com/pilot/" class="btn btn-white">
-        Join the Pilot Waitlist â
+        Join the Pilot Waitlist →
       </a>
     </div>
 
     <div style="text-align:center; padding-bottom:20px;">
       <button class="btn btn-ghost" onclick="retake()" style="min-width:180px;">
-        â© Retake Assessment
+        ↩ Retake Assessment
       </button>
     </div>
 
@@ -725,30 +725,30 @@
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ═══════════════════════════════════════════════════════════════
      JAVASCRIPT
-ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+════════════════════════════════════════════════════════════════ -->
 <script>
 'use strict';
 
-// âââ Category Config ââââââââââââââââââââââââââââââââââââââââââ
+// ─── Category Config ──────────────────────────────────────────
 const CAT = {
-  communications: { name: 'Emergency Communications & Dispatch', icon: 'ð', weight: 0.10 },
-  apparatus:      { name: 'Apparatus & Equipment',               icon: 'ð', weight: 0.15 },
-  personnel:      { name: 'Personnel & Staffing',                icon: 'ð¥', weight: 0.15 },
-  training:       { name: 'Training & Records',                  icon: 'ð', weight: 0.10 },
-  water:          { name: 'Water Supply',                        icon: 'ð§', weight: 0.35 },
-  preplanning:    { name: 'Pre-Incident Planning',               icon: 'ðï¸', weight: 0.15 }
+  communications: { name: 'Emergency Communications & Dispatch', icon: '🔊', weight: 0.10 },
+  apparatus:      { name: 'Apparatus & Equipment',               icon: '🚒', weight: 0.15 },
+  personnel:      { name: 'Personnel & Staffing',                icon: '👥', weight: 0.15 },
+  training:       { name: 'Training & Records',                  icon: '📚', weight: 0.10 },
+  water:          { name: 'Water Supply',                        icon: '💧', weight: 0.35 },
+  preplanning:    { name: 'Pre-Incident Planning',               icon: '🏗️', weight: 0.15 }
 };
 
-// âââ Questions (12 total, 6 free + 6 gated) ââââââââââââââââââ
+// ─── Questions (12 total, 6 free + 6 gated) ──────────────────
 const QUESTIONS = [
-  // ââ FREE (Q1âQ6) ââââââââââââââââââââââââââââââââââââââââââââ
+  // ── FREE (Q1–Q6) ────────────────────────────────────────────
   {
     id: 'comm_0', cat: 'communications', locked: false,
     text: 'Does your department have access to a 24/7 dedicated dispatch center?',
     options: [
-      'No â dispatch is informal, self-handled, or part-time',
+      'No — dispatch is informal, self-handled, or part-time',
       'Shared/regional dispatch with limited documentation',
       '24/7 dispatch access but processes aren\'t fully documented',
       'Fully staffed 24/7 dispatch with documented procedures and performance standards'
@@ -758,9 +758,9 @@ const QUESTIONS = [
     id: 'app_0', cat: 'apparatus', locked: false,
     text: 'How many pumper trucks does your department operate that meet or exceed NFPA 1901 standards?',
     options: [
-      'None that fully meet NFPA 1901 â apparatus is aging or non-compliant',
-      '1 pumper meeting standards â limited reserve capacity',
-      '2 pumpers meeting standards â adequate first-alarm response',
+      'None that fully meet NFPA 1901 — apparatus is aging or non-compliant',
+      '1 pumper meeting standards — limited reserve capacity',
+      '2 pumpers meeting standards — adequate first-alarm response',
       '3 or more compliant pumpers with documented reserve capability'
     ]
   },
@@ -768,8 +768,8 @@ const QUESTIONS = [
     id: 'app_1', cat: 'apparatus', locked: false,
     text: 'How rigorously are your apparatus maintained and inspected?',
     options: [
-      'No formal maintenance schedule â repairs are reactive',
-      'Annual inspections only â no documented daily/weekly checks',
+      'No formal maintenance schedule — repairs are reactive',
+      'Annual inspections only — no documented daily/weekly checks',
       'Scheduled maintenance exists but daily inspection logs are inconsistent',
       'Documented preventive maintenance schedule with daily apparatus checks and signed logs'
     ]
@@ -778,9 +778,9 @@ const QUESTIONS = [
     id: 'pers_0', cat: 'personnel', locked: false,
     text: 'How many personnel can your department reliably put on scene for a first-alarm residential structure fire?',
     options: [
-      'Fewer than 4 â crew assembly is unpredictable',
-      '4â6 on scene within NFPA 1720 benchmarks inconsistently',
-      '6â10 personnel consistently meeting NFPA 1720 benchmarks',
+      'Fewer than 4 — crew assembly is unpredictable',
+      '4–6 on scene within NFPA 1720 benchmarks inconsistently',
+      '6–10 personnel consistently meeting NFPA 1720 benchmarks',
       '10+ personnel on scene reliably, meeting or exceeding NFPA 1710/1720'
     ]
   },
@@ -788,10 +788,10 @@ const QUESTIONS = [
     id: 'pers_1', cat: 'personnel', locked: false,
     text: 'What is the trend in your active membership/roster over the past 3 years?',
     options: [
-      'Significant decline â roster is critically short',
-      'Moderate decline â recruitment is a known challenge',
-      'Stable â roster holding but not growing',
-      'Growing â active recruitment program with measurable results'
+      'Significant decline — roster is critically short',
+      'Moderate decline — recruitment is a known challenge',
+      'Stable — roster holding but not growing',
+      'Growing — active recruitment program with measurable results'
     ]
   },
   {
@@ -800,18 +800,18 @@ const QUESTIONS = [
     options: [
       'Most active members do not meet minimum hour requirements',
       'Fewer than half of active members are fully certified',
-      'Most active members certified â tracking and follow-up on gaps',
+      'Most active members certified — tracking and follow-up on gaps',
       'All active members certified with a documented annual training calendar'
     ]
   },
-  // ââ GATED (Q7âQ12) ââââââââââââââââââââââââââââââââââââââââââ
+  // ── GATED (Q7–Q12) ──────────────────────────────────────────
   {
     id: 'train_1', cat: 'training', locked: true,
     text: 'How frequently does your department conduct structured company-level training drills?',
     options: [
-      'Rarely or never â training is ad hoc',
-      'A few times per year â no regular schedule',
-      'Monthly drills â sometimes skipped',
+      'Rarely or never — training is ad hoc',
+      'A few times per year — no regular schedule',
+      'Monthly drills — sometimes skipped',
       'Monthly or more, with documented drill reports and attendance records'
     ]
   },
@@ -819,9 +819,9 @@ const QUESTIONS = [
     id: 'water_0', cat: 'water', locked: true,
     text: 'What percentage of your primary response area is covered by a hydrant system?',
     options: [
-      'Less than 25% hydrant coverage â most responses rely on tankers',
-      '25â50% coverage â significant rural or unhydranted areas',
-      '50â75% coverage â most developed areas served by hydrants',
+      'Less than 25% hydrant coverage — most responses rely on tankers',
+      '25–50% coverage — significant rural or unhydranted areas',
+      '50–75% coverage — most developed areas served by hydrants',
       'Over 75% of response area has hydrant coverage'
     ]
   },
@@ -829,9 +829,9 @@ const QUESTIONS = [
     id: 'water_1', cat: 'water', locked: true,
     text: 'Are your fire hydrants flow-tested and inspected on a regular schedule?',
     options: [
-      'No formal inspection program â hydrant condition is largely unknown',
+      'No formal inspection program — hydrant condition is largely unknown',
       'Hydrants inspected occasionally but not on a documented annual schedule',
-      'Annual inspection in place â flow testing records exist but may be incomplete',
+      'Annual inspection in place — flow testing records exist but may be incomplete',
       'Full annual hydrant inspection and flow testing with documented records accessible for ISO review'
     ]
   },
@@ -839,8 +839,8 @@ const QUESTIONS = [
     id: 'water_2', cat: 'water', locked: true,
     text: 'For areas without hydrant coverage, does your department have adequate tanker/tender capacity?',
     options: [
-      'No tankers â no alternative water supply capability for rural areas',
-      '1 tanker available â limited shuttle capacity for sustained operations',
+      'No tankers — no alternative water supply capability for rural areas',
+      '1 tanker available — limited shuttle capacity for sustained operations',
       'Tanker capacity sufficient for most rural responses with documented procedures',
       'Full tanker shuttle capability with mutual aid agreements and demonstrated capacity for 250 GPM sustained delivery'
     ]
@@ -849,9 +849,9 @@ const QUESTIONS = [
     id: 'preplan_0', cat: 'preplanning', locked: true,
     text: 'What percentage of target hazard occupancies in your jurisdiction have a current pre-incident plan on file?',
     options: [
-      'Less than 25% â pre-planning is minimal or non-existent',
-      '25â50% â some target hazards covered, significant gaps remain',
-      '50â75% â most high-priority occupancies have plans, updates inconsistent',
+      'Less than 25% — pre-planning is minimal or non-existent',
+      '25–50% — some target hazards covered, significant gaps remain',
+      '50–75% — most high-priority occupancies have plans, updates inconsistent',
       'Over 75% of target hazards have current, documented pre-incident plans'
     ]
   },
@@ -859,8 +859,8 @@ const QUESTIONS = [
     id: 'preplan_1', cat: 'preplanning', locked: true,
     text: 'How do crews access pre-incident plans during an emergency response?',
     options: [
-      'Pre-plans are not accessible in the field â paper binders at the station only',
-      'Paper binders in some apparatus â not standardized',
+      'Pre-plans are not accessible in the field — paper binders at the station only',
+      'Paper binders in some apparatus — not standardized',
       'Digital access available but inconsistent across apparatus',
       'Pre-plans accessible on mobile devices or in-cab tablets with current data for all apparatus'
     ]
@@ -870,28 +870,28 @@ const QUESTIONS = [
 const FREE_COUNT  = QUESTIONS.filter(q => !q.locked).length;  // 6
 const TOTAL_COUNT = QUESTIONS.length;                          // 12
 
-// âââ State ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── State ────────────────────────────────────────────────────
 const state = {
-  answers: {},        // id â 0â3
+  answers: {},        // id → 0–3
   gateSubmitted: false,
   lead: {}
 };
 
-// âââ Screen Management ââââââââââââââââââââââââââââââââââââââââ
+// ─── Screen Management ────────────────────────────────────────
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('screen-' + id).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// âââ Start Assessment âââââââââââââââââââââââââââââââââââââââââ
+// ─── Start Assessment ─────────────────────────────────────────
 function startAssessment() {
   renderQuestions();
   document.getElementById('progressWrap').style.display = 'block';
   showScreen('assessment');
 }
 
-// âââ Render Questions âââââââââââââââââââââââââââââââââââââââââ
+// ─── Render Questions ─────────────────────────────────────────
 function renderQuestions() {
   const freeEl   = document.getElementById('freeQuestions');
   const lockedEl = document.getElementById('lockedQuestions');
@@ -928,7 +928,7 @@ function buildQuestionCard(q, idx) {
   `;
 }
 
-// âââ Select Option ââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Select Option ────────────────────────────────────────────
 function selectOption(qId, value, labelEl) {
   state.answers[qId] = value;
 
@@ -942,7 +942,7 @@ function selectOption(qId, value, labelEl) {
   checkCanSubmit();
 }
 
-// âââ Progress Bar âââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Progress Bar ─────────────────────────────────────────────
 function updateProgress() {
   const answered = Object.keys(state.answers).length;
   const total    = state.gateSubmitted ? TOTAL_COUNT : FREE_COUNT;
@@ -954,7 +954,7 @@ function updateProgress() {
   document.getElementById('progressFill').style.width = pct + '%';
 }
 
-// âââ Gate Highlight (when all 6 free answered) ââââââââââââââââ
+// ─── Gate Highlight (when all 6 free answered) ────────────────
 function checkGateHighlight() {
   if (state.gateSubmitted) return;
   const freeAnswered = QUESTIONS.filter(q => !q.locked)
@@ -972,7 +972,7 @@ function checkGateHighlight() {
   }
 }
 
-// âââ Submit Gate ââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Submit Gate ──────────────────────────────────────────────
 async function submitGate() {
   const first    = document.getElementById('gFirst').value.trim();
   const last     = document.getElementById('gLast').value.trim();
@@ -1038,7 +1038,7 @@ async function submitGate() {
   checkCanSubmit();
 }
 
-// âââ Enable Submit Button âââââââââââââââââââââââââââââââââââââ
+// ─── Enable Submit Button ─────────────────────────────────────
 function checkCanSubmit() {
   if (!state.gateSubmitted) return;
   const allAnswered = QUESTIONS.every(q => state.answers[q.id] !== undefined);
@@ -1054,7 +1054,7 @@ function checkCanSubmit() {
   }
 }
 
-// âââ Scoring ââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Scoring ──────────────────────────────────────────────────
 function buildScores() {
   // Group answers by category
   const catData = {};
@@ -1082,29 +1082,29 @@ function buildScores() {
 }
 
 function getIsoClass(score) {
-  if (score >= 90) return { label: 'Estimated Class 1â2', color: '#16A34A', bg: 'rgba(22,163,74,.15)' };
-  if (score >= 75) return { label: 'Estimated Class 3â4', color: '#2563EB', bg: 'rgba(37,99,235,.15)' };
-  if (score >= 55) return { label: 'Estimated Class 5â6', color: '#D97706', bg: 'rgba(217,119,6,.15)' };
-  if (score >= 35) return { label: 'Estimated Class 7â8', color: '#EA580C', bg: 'rgba(234,88,12,.15)' };
-  return            { label: 'Estimated Class 9â10',  color: '#DC2626', bg: 'rgba(220,38,38,.15)' };
+  if (score >= 90) return { label: 'Estimated Class 1–2', color: '#16A34A', bg: 'rgba(22,163,74,.15)' };
+  if (score >= 75) return { label: 'Estimated Class 3–4', color: '#2563EB', bg: 'rgba(37,99,235,.15)' };
+  if (score >= 55) return { label: 'Estimated Class 5–6', color: '#D97706', bg: 'rgba(217,119,6,.15)' };
+  if (score >= 35) return { label: 'Estimated Class 7–8', color: '#EA580C', bg: 'rgba(234,88,12,.15)' };
+  return            { label: 'Estimated Class 9–10',  color: '#DC2626', bg: 'rgba(220,38,38,.15)' };
 }
 
 function getSummaryText(score, lead) {
   const name = lead.first || 'Your department';
   if (score >= 85) return `${name}'s department shows strong ISO readiness across most categories. Focus on the gaps below to push toward a Class 1 or 2 rating.`;
-  if (score >= 65) return `${name}'s department has a solid foundation but meaningful improvement opportunities remain. Addressing the priorities below could move you 1â2 ISO classes.`;
-  if (score >= 45) return `${name}'s department has moderate readiness. Several key FSRS criteria need attention â targeted improvements could make a significant difference in your next review.`;
+  if (score >= 65) return `${name}'s department has a solid foundation but meaningful improvement opportunities remain. Addressing the priorities below could move you 1–2 ISO classes.`;
+  if (score >= 45) return `${name}'s department has moderate readiness. Several key FSRS criteria need attention — targeted improvements could make a significant difference in your next review.`;
   return `${name}'s department has significant gaps across multiple FSRS categories. The good news: this assessment identifies exactly where to start.`;
 }
 
-// âââ Recommendations ââââââââââââââââââââââââââââââââââââââââââ
+// ─── Recommendations ──────────────────────────────────────────
 function getRecommendations(catScores) {
   const recBank = {
     communications: [
-      { threshold: 75, text: 'Formalize dispatch procedures and begin tracking response time benchmarks. Even simple metrics (alarm receipt â dispatch time â on-scene time) create an auditable record for ISO reviewers.' }
+      { threshold: 75, text: 'Formalize dispatch procedures and begin tracking response time benchmarks. Even simple metrics (alarm receipt → dispatch time → on-scene time) create an auditable record for ISO reviewers.' }
     ],
     apparatus: [
-      { threshold: 66, text: 'Develop a written apparatus replacement schedule â even if funding isn\'t immediate. ISO reviewers credit departments for documented planning. FEMA AFG grants can fund apparatus purchases.' },
+      { threshold: 66, text: 'Develop a written apparatus replacement schedule — even if funding isn\'t immediate. ISO reviewers credit departments for documented planning. FEMA AFG grants can fund apparatus purchases.' },
       { threshold: 99, text: 'Implement daily apparatus inspection logs. A simple form that takes 10 minutes per shift creates the documentation ISO evaluators look for.' }
     ],
     personnel: [
@@ -1112,16 +1112,16 @@ function getRecommendations(catScores) {
       { threshold: 99, text: 'Establish written mutual aid agreements with neighboring departments. These agreements count toward your FSRS score and cost nothing to execute.' }
     ],
     training: [
-      { threshold: 66, text: 'Implement a monthly drill calendar and require signed attendance records. Training documentation is a direct FSRS input â undocumented training earns no ISO credit.' },
+      { threshold: 66, text: 'Implement a monthly drill calendar and require signed attendance records. Training documentation is a direct FSRS input — undocumented training earns no ISO credit.' },
       { threshold: 99, text: 'Prioritize NFPA 1001 certifications for all active members. Certification rates are one of the most directly auditable training metrics during ISO review.' }
     ],
     water: [
-      { threshold: 50, text: 'Establish an annual hydrant inspection and flow testing program. Coordinate with your water utility â they often share the cost. Undocumented hydrants receive no ISO credit.' },
+      { threshold: 50, text: 'Establish an annual hydrant inspection and flow testing program. Coordinate with your water utility — they often share the cost. Undocumented hydrants receive no ISO credit.' },
       { threshold: 75, text: 'Build a digital hydrant database with GPS locations, flow rates, and last test dates. This is a high-impact, low-cost improvement that directly supports your 35%-weighted water supply score.' },
       { threshold: 99, text: 'If tanker capacity is limited, explore mutual aid tanker agreements with neighboring departments. Documented agreements for supplemental water supply count toward your rural water score.' }
     ],
     preplanning: [
-      { threshold: 66, text: 'Prioritize pre-incident plans for your top 20 target hazard occupancies â schools, large commercial buildings, industrial facilities. Even basic plans for these locations move your FSRS score.' },
+      { threshold: 66, text: 'Prioritize pre-incident plans for your top 20 target hazard occupancies — schools, large commercial buildings, industrial facilities. Even basic plans for these locations move your FSRS score.' },
       { threshold: 99, text: 'Move pre-plans to a mobile-accessible format. Paper binders at the station provide no ISO benefit for field crews. Tablet-based pre-plan access is increasingly a baseline expectation.' }
     ]
   };
@@ -1139,7 +1139,7 @@ function getRecommendations(catScores) {
   return results.slice(0, 5);
 }
 
-// âââ Show Results âââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Show Results ─────────────────────────────────────────────
 function showResults() {
   const scores = buildScores();
   renderResults(scores);
@@ -1211,7 +1211,7 @@ function renderResults(scores) {
   document.getElementById('recsList').innerHTML = recsHtml;
 }
 
-// âââ Retake âââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ─── Retake ───────────────────────────────────────────────────
 function retake() {
   state.answers = {};
   state.gateSubmitted = false;
@@ -1227,7 +1227,7 @@ function retake() {
   document.getElementById('gateUnlocked').style.display = 'none';
   document.getElementById('gateCard').classList.remove('gate-ready');
   const gBtn = document.getElementById('gateSubmitBtn');
-  gBtn.innerHTML = 'Unlock Remaining Questions â';
+  gBtn.innerHTML = 'Unlock Remaining Questions →';
   gBtn.disabled  = false;
 
   // Reset locked section
